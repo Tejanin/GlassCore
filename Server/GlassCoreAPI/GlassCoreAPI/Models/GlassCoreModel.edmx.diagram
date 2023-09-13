@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5f926de760d4d2fa13ecc4beb9b3263" Name="Diagram1">
+        <EntityTypeShape EntityType="GlassCoreModel.Administrador" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Asignatura" Width="1.5" PointX="6" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Asignatura_Cod" Width="1.5" PointX="3.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Aula" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Carrera" Width="1.5" PointX="6" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Dias" Width="1.5" PointX="6" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Estudiante" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Estudiante_Soporte" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Horario_Estudiante_Reporte" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Horario_Profesor" Width="1.5" PointX="5.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Pesum" Width="1.5" PointX="8.25" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Profesor" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Profesor_Soporte" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Tarea" Width="1.5" PointX="5.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlassCoreModel.Usuario" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="GlassCoreModel.FK__Administr__Id_Us__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Estudiant__Id_Ad__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Profesor___Id_Ad__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Asignatur__Codig__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Horario_E__Id_As__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Horario_P__Id_As__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Pesum__Id_Asigna__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Horario_P__Id_Au__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Pesum__Id_Carrer__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Horario_E__Id_Di__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Horario_P__Id_Di__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Estudiant__Id_Es__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Estudiant__Id_Us__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Horario_E__Id_Es__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Tarea__Id_Estudi__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Horario_E__Id_Pr__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Horario_P__Id_Pr__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Profesor___Id_Pr__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="GlassCoreModel.FK__Profesor__Id_Usu__60A75C0F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
