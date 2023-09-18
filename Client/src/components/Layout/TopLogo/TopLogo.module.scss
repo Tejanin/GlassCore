@@ -1,0 +1,20 @@
+.presentationBar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 10px; /* Espacio entre la imagen y el título */
+}

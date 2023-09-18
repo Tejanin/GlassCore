@@ -1,0 +1,46 @@
+.customTable {
+  background-color: #f0f0f0;
+}
+
+/* Estilo personalizado para el encabezado de la tabla */
+.customTable .ui.table th {
+  background-color: #333;
+  text-align: center;
+  color: #fff;
+}
+
+/* Estilo personalizado para las celdas de la tabla */
+.customTable .ui.table td {
+  
+  color: #555;
+}
+
+/* Estilo personalizado para el botón de edición */
+.customTable .ui.blue.button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Estilo personalizado para el botón de eliminación */
+.customTable .ui.red.button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.headerCell,
+.bodyCell {
+  vertical-align: middle; /* Alinea verticalmente el contenido al centro */
+  text-align: center; /* Alinea horizontalmente el texto al centro si es necesario */
+}
+
+.iconButton {
+  background: transparent !important; /* Elimina el fondo */
+  border: none; /* Elimina el borde */
+  padding: 0; /* Elimina el espacio interior */
+  margin: 0; /* Elimina el margen */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+
+  .icon {
+    /* Estilos opcionales para el icono si deseas personalizarlo */
+  }
+}

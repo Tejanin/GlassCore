@@ -1,0 +1,86 @@
+.crearusuariolayout{
+    background-color: lightblue !important;
+}
+
+.modal {
+    width: 400px; /* Ancho del modal */
+    background-color: lightblue !important;
+  }
+
+.checkboxGroup {
+    display: flex;
+    flex-direction: column; /* Alinea verticalmente los checkboxes */
+  }
+  
+  .checkboxContainer {
+    display: flex;
+    //justify-content: space-between; /* Alinea los checkboxes en una fila */
+  }
+  
+  .checkboxItem {
+    margin-right: 20px; /* Espacio de 20px entre los checkboxes */
+  }
+  
+  .nameRow {
+    display: flex;
+    justify-content: space-between; /* Alinea los campos de nombre y apellidos en una fila */
+    margin-bottom: 20px; /* Espacio entre las filas de campos de nombre y apellidos y otros campos */
+  }
+  
+  .nameField {
+    flex: 1; /* Distribuye el espacio de manera uniforme entre los campos de nombre, apellido paterno y apellido materno */
+    margin-right: 10px; /* Espacio entre los campos de nombre, apellido paterno y apellido materno */
+  }
+  
+  .emailPhoneRow {
+    display: flex;
+    justify-content: space-between; /* Alinea los campos de correo y teléfono en una fila */
+    margin-bottom: 20px; /* Espacio entre las filas de campos de correo y teléfono y otros campos */
+  }
+  
+  .emailField {
+    flex: 1; /* Distribuye el espacio de manera uniforme entre los campos de correo y teléfono */
+    margin-right: 10px; /* Espacio entre los campos de correo y teléfono */
+  }
+  
+  .phoneField {
+    flex: 1; /* Distribuye el espacio de manera uniforme entre los campos de correo y teléfono */
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between; /* Alinea los botones Cancelar y Guardar en los extremos */
+    
+  }
+  
+  .actionsContainer{
+    //background-color: #272727 !important;
+  }
+  .cancelButton {
+    margin-left: 0; /* Espacio a la derecha del botón Cancelar */
+    float: left;
+  }
+  
+  .saveButton {
+    margin-right: 10px; /* Espacio a la izquierda del botón Guardar */
+    //float:right;
+  }
+
+  .modalactions{
+    //background-color: #272727 !important;
+        
+  }
+      .nameCell {
+        width: 200px !important; /* Ajusta el ancho de las celdas de la columna "Nombre" */
+      }
+      
+      .idCell {
+        width: 100px !important; /* Ajusta el ancho de las celdas de la columna "Matrícula" */
+      }
+      
+      .emailCell {
+        width: 300px !important; /* Ajusta el ancho de las celdas de la columna "Email" */
+      }
+      .actionsCell {
+        width: 50px !important; /* Ajusta el ancho de las celdas de la columna "Email" */
+      }

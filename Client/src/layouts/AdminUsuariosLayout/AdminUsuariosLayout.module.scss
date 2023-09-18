@@ -1,0 +1,54 @@
+
+.adminusuarios {
+    text-align: center;
+    padding: 20px;
+    .header {
+        text-align: left; /* Alinea el h1 a la derecha */
+      }
+    
+      .header h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }n-bottom: 20px;
+  }
+  .pageTitle {
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+  .filterRow {
+    display: flex;
+    justify-content: space-between;
+
+    .leftSection {
+      display: flex;
+      align-items: center; // Centrar verticalmente los elementos en la izquierda
+    }
+
+    .rightSection {
+      display: flex;
+      align-items: center; // Centrar verticalmente los elementos en la derecha
+    }
+  }
+  .filterContainer {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 10px; // Ajusta el espacio entre el título y el select
+    }
+  }
+
+  .selectContainer {
+    margin-right: 30px; // Separación de 30px entre el select y la barra de búsqueda
+ 
+  }
+
+  .searchContainer {
+    // Agrega propiedades de estilo para el contenedor de búsqueda si es necesario
+  }
+  .tableContainer {
+    margin-top: 20px; // Puedes ajustar el valor para controlar la separación entre la tabla y los componentes de arriba
+  }
+
+  .addButton{
+    background-color: aqua !important ;
+  }
