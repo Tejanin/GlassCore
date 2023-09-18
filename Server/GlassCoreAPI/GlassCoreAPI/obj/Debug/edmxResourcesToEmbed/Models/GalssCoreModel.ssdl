@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GlassCoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="Id_Administrador" />
+    </Key>
+    <Property Name="Id_Administrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Usuario" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Asignatura">
+    <Key>
+      <PropertyRef Name="Id_Asignatura" />
+    </Key>
+    <Property Name="Id_Asignatura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Asignatura" Type="varchar" MaxLength="90" />
+    <Property Name="Codigo_Asignatura" Type="int" Nullable="false" />
+    <Property Name="Creditos" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Asignatura_Cod">
+    <Key>
+      <PropertyRef Name="Id_Codigo_Asignatura" />
+    </Key>
+    <Property Name="Id_Codigo_Asignatura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo_Asignatura" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Aula">
+    <Key>
+      <PropertyRef Name="Id_Aula" />
+    </Key>
+    <Property Name="Id_Aula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Aula" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Carrera">
+    <Key>
+      <PropertyRef Name="Id_Carrera" />
+    </Key>
+    <Property Name="Id_Carrera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Carrera" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Permanencia" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dias">
+    <Key>
+      <PropertyRef Name="Id_Dia" />
+    </Key>
+    <Property Name="Id_Dia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dia" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estudiante">
+    <Key>
+      <PropertyRef Name="Id_Estudiante" />
+    </Key>
+    <Property Name="Id_Estudiante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Usuario" Type="int" Nullable="false" />
+    <Property Name="Indice_General" Type="decimal" Precision="2" Scale="2" Nullable="false" />
+    <Property Name="Indice_Periodico" Type="decimal" Precision="2" Scale="2" />
+    <Property Name="Honor" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Id_Carrera" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Epoints" Type="int" />
+  </EntityType>
+  <EntityType Name="Estudiante_Soporte">
+    <Key>
+      <PropertyRef Name="Id_Administrador" />
+      <PropertyRef Name="Id_Estudiante" />
+      <PropertyRef Name="Id_Nota" />
+    </Key>
+    <Property Name="Id_Administrador" Type="int" Nullable="false" />
+    <Property Name="Id_Estudiante" Type="int" Nullable="false" />
+    <Property Name="Mensaje" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Id_Nota" Type="int" Nullable="false" />
+    <Property Name="Fecha_Enviada" Type="datetime" />
+    <Property Name="Fecha_Respondida" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Horario_Estudiante_Reporte">
+    <Key>
+      <PropertyRef Name="Id_Estudiante" />
+      <PropertyRef Name="Id_Asignatura" />
+      <PropertyRef Name="Seccion" />
+      <PropertyRef Name="Id_Profesor" />
+    </Key>
+    <Property Name="Id_Estudiante" Type="int" Nullable="false" />
+    <Property Name="Id_Asignatura" Type="int" Nullable="false" />
+    <Property Name="Seccion" Type="int" Nullable="false" />
+    <Property Name="Id_Profesor" Type="int" Nullable="false" />
+    <Property Name="Trimestre" Type="int" Nullable="false" />
+    <Property Name="Medio_Termino" Type="int" />
+    <Property Name="Calificacion_Final" Type="varchar" MaxLength="2" />
+    <Property Name="Puntos" Type="int" />
+    <Property Name="Id_Dia" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Horario_Profesor">
+    <Key>
+      <PropertyRef Name="Id_Profesor" />
+      <PropertyRef Name="Id_Asignatura" />
+      <PropertyRef Name="Seccion" />
+      <PropertyRef Name="Id_Dia" />
+    </Key>
+    <Property Name="Id_Profesor" Type="int" Nullable="false" />
+    <Property Name="Id_Asignatura" Type="int" Nullable="false" />
+    <Property Name="Seccion" Type="int" Nullable="false" />
+    <Property Name="Hora_Inicio" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Hora_Cierre" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Id_Dia" Type="int" Nullable="false" />
+    <Property Name="Id_Aula" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pesum">
+    <Key>
+      <PropertyRef Name="Id_Carrera" />
+      <PropertyRef Name="Id_Asignatura" />
+    </Key>
+    <Property Name="Id_Carrera" Type="int" Nullable="false" />
+    <Property Name="Id_Asignatura" Type="int" Nullable="false" />
+    <Property Name="Año" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profesor">
+    <Key>
+      <PropertyRef Name="Id_Profesor" />
+    </Key>
+    <Property Name="Id_Profesor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Usuario" Type="int" />
+    <Property Name="Titulo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profesor_Soporte">
+    <Key>
+      <PropertyRef Name="Id_Administrador" />
+      <PropertyRef Name="Id_Profesor" />
+      <PropertyRef Name="Id_Nota" />
+    </Key>
+    <Property Name="Id_Administrador" Type="int" Nullable="false" />
+    <Property Name="Id_Profesor" Type="int" Nullable="false" />
+    <Property Name="Mensaje" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Id_Nota" Type="int" Nullable="false" />
+    <Property Name="Fecha_Enviada" Type="datetime" Nullable="false" />
+    <Property Name="Fecha_Respondida" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tarea">
+    <Key>
+      <PropertyRef Name="Id_Tarea" />
+      <PropertyRef Name="Id_Estudiante" />
+    </Key>
+    <Property Name="Id_Tarea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Estudiante" Type="int" Nullable="false" />
+    <Property Name="Mensaje" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Fecha_Inicio" Type="date" Nullable="false" />
+    <Property Name="Fecha_Cierre" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellido_Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Imagen" Type="varchar" MaxLength="400" />
+    <Property Name="Rol" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fecha_Ingreso" Type="date" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Administr__Id_Us__47DBAE45">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="Administrador">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Asignatur__Codig__412EB0B6">
+    <End Role="Asignatura_Cod" Type="Self.Asignatura_Cod" Multiplicity="1" />
+    <End Role="Asignatura" Type="Self.Asignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asignatura_Cod">
+        <PropertyRef Name="Id_Codigo_Asignatura" />
+      </Principal>
+      <Dependent Role="Asignatura">
+        <PropertyRef Name="Codigo_Asignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Estudiant__Id_Ad__5165187F">
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="1" />
+    <End Role="Estudiante_Soporte" Type="Self.Estudiante_Soporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="Id_Administrador" />
+      </Principal>
+      <Dependent Role="Estudiante_Soporte">
+        <PropertyRef Name="Id_Administrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Estudiant__Id_Es__6A30C649">
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+    <End Role="Estudiante_Soporte" Type="Self.Estudiante_Soporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estudiante">
+        <PropertyRef Name="Id_Estudiante" />
+      </Principal>
+      <Dependent Role="Estudiante_Soporte">
+        <PropertyRef Name="Id_Estudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Estudiant__Id_Us__693CA210">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="Estudiante">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Horario_E__Id_As__5EBF139D">
+    <End Role="Asignatura" Type="Self.Asignatura" Multiplicity="1" />
+    <End Role="Horario_Estudiante_Reporte" Type="Self.Horario_Estudiante_Reporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asignatura">
+        <PropertyRef Name="Id_Asignatura" />
+      </Principal>
+      <Dependent Role="Horario_Estudiante_Reporte">
+        <PropertyRef Name="Id_Asignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Horario_E__Id_Di__5FB337D6">
+    <End Role="Dias" Type="Self.Dias" Multiplicity="1" />
+    <End Role="Horario_Estudiante_Reporte" Type="Self.Horario_Estudiante_Reporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dias">
+        <PropertyRef Name="Id_Dia" />
+      </Principal>
+      <Dependent Role="Horario_Estudiante_Reporte">
+        <PropertyRef Name="Id_Dia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Horario_E__Id_Es__6B24EA82">
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+    <End Role="Horario_Estudiante_Reporte" Type="Self.Horario_Estudiante_Reporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estudiante">
+        <PropertyRef Name="Id_Estudiante" />
+      </Principal>
+      <Dependent Role="Horario_Estudiante_Reporte">
+        <PropertyRef Name="Id_Estudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Horario_E__Id_Pr__5DCAEF64">
+    <End Role="Profesor" Type="Self.Profesor" Multiplicity="1" />
+    <End Role="Horario_Estudiante_Reporte" Type="Self.Horario_Estudiante_Reporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesor">
+        <PropertyRef Name="Id_Profesor" />
+      </Principal>
+      <Dependent Role="Horario_Estudiante_Reporte">
+        <PropertyRef Name="Id_Profesor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Horario_P__Id_As__59063A47">
+    <End Role="Asignatura" Type="Self.Asignatura" Multiplicity="1" />
+    <End Role="Horario_Profesor" Type="Self.Horario_Profesor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asignatura">
+        <PropertyRef Name="Id_Asignatura" />
+      </Principal>
+      <Dependent Role="Horario_Profesor">
+        <PropertyRef Name="Id_Asignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Horario_P__Id_Au__59FA5E80">
+    <End Role="Aula" Type="Self.Aula" Multiplicity="1" />
+    <End Role="Horario_Profesor" Type="Self.Horario_Profesor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aula">
+        <PropertyRef Name="Id_Aula" />
+      </Principal>
+      <Dependent Role="Horario_Profesor">
+        <PropertyRef Name="Id_Aula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Horario_P__Id_Di__5AEE82B9">
+    <End Role="Dias" Type="Self.Dias" Multiplicity="1" />
+    <End Role="Horario_Profesor" Type="Self.Horario_Profesor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dias">
+        <PropertyRef Name="Id_Dia" />
+      </Principal>
+      <Dependent Role="Horario_Profesor">
+        <PropertyRef Name="Id_Dia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Horario_P__Id_Pr__5812160E">
+    <End Role="Profesor" Type="Self.Profesor" Multiplicity="1" />
+    <End Role="Horario_Profesor" Type="Self.Horario_Profesor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesor">
+        <PropertyRef Name="Id_Profesor" />
+      </Principal>
+      <Dependent Role="Horario_Profesor">
+        <PropertyRef Name="Id_Profesor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pesum__Id_Asigna__440B1D61">
+    <End Role="Asignatura" Type="Self.Asignatura" Multiplicity="1" />
+    <End Role="Pesum" Type="Self.Pesum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asignatura">
+        <PropertyRef Name="Id_Asignatura" />
+      </Principal>
+      <Dependent Role="Pesum">
+        <PropertyRef Name="Id_Asignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pesum__Id_Carrer__44FF419A">
+    <End Role="Carrera" Type="Self.Carrera" Multiplicity="1" />
+    <End Role="Pesum" Type="Self.Pesum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carrera">
+        <PropertyRef Name="Id_Carrera" />
+      </Principal>
+      <Dependent Role="Pesum">
+        <PropertyRef Name="Id_Carrera" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profesor___Id_Ad__5535A963">
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="1" />
+    <End Role="Profesor_Soporte" Type="Self.Profesor_Soporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="Id_Administrador" />
+      </Principal>
+      <Dependent Role="Profesor_Soporte">
+        <PropertyRef Name="Id_Administrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profesor___Id_Pr__5441852A">
+    <End Role="Profesor" Type="Self.Profesor" Multiplicity="1" />
+    <End Role="Profesor_Soporte" Type="Self.Profesor_Soporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesor">
+        <PropertyRef Name="Id_Profesor" />
+      </Principal>
+      <Dependent Role="Profesor_Soporte">
+        <PropertyRef Name="Id_Profesor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profesor__Id_Usu__4D94879B">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Profesor" Type="Self.Profesor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="Profesor">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tarea__Id_Estudi__6C190EBB">
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+    <End Role="Tarea" Type="Self.Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estudiante">
+        <PropertyRef Name="Id_Estudiante" />
+      </Principal>
+      <Dependent Role="Tarea">
+        <PropertyRef Name="Id_Estudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ppFiltrarUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ordenamiento" Type="varchar" Mode="In" />
+    <Parameter Name="Rol" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ppInsertarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Rol" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ppModificarEstadoUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Usuario" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ppModificarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Usuario" Type="int" Mode="In" />
+    <Parameter Name="Nombre_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Apellido_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Imagen" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="Rol" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="GlassCoreModelStoreContainer">
+    <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Asignatura" EntityType="Self.Asignatura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Asignatura_Cod" EntityType="Self.Asignatura_Cod" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Aula" EntityType="Self.Aula" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Carrera" EntityType="Self.Carrera" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dias" EntityType="Self.Dias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estudiante" EntityType="Self.Estudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estudiante_Soporte" EntityType="Self.Estudiante_Soporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Horario_Estudiante_Reporte" EntityType="Self.Horario_Estudiante_Reporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Horario_Profesor" EntityType="Self.Horario_Profesor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pesum" EntityType="Self.Pesum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profesor" EntityType="Self.Profesor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profesor_Soporte" EntityType="Self.Profesor_Soporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tarea" EntityType="Self.Tarea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Administr__Id_Us__47DBAE45" Association="Self.FK__Administr__Id_Us__47DBAE45">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Administrador" EntitySet="Administrador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Asignatur__Codig__412EB0B6" Association="Self.FK__Asignatur__Codig__412EB0B6">
+      <End Role="Asignatura_Cod" EntitySet="Asignatura_Cod" />
+      <End Role="Asignatura" EntitySet="Asignatura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Estudiant__Id_Ad__5165187F" Association="Self.FK__Estudiant__Id_Ad__5165187F">
+      <End Role="Administrador" EntitySet="Administrador" />
+      <End Role="Estudiante_Soporte" EntitySet="Estudiante_Soporte" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Estudiant__Id_Es__6A30C649" Association="Self.FK__Estudiant__Id_Es__6A30C649">
+      <End Role="Estudiante" EntitySet="Estudiante" />
+      <End Role="Estudiante_Soporte" EntitySet="Estudiante_Soporte" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Estudiant__Id_Us__693CA210" Association="Self.FK__Estudiant__Id_Us__693CA210">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estudiante" EntitySet="Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Horario_E__Id_As__5EBF139D" Association="Self.FK__Horario_E__Id_As__5EBF139D">
+      <End Role="Asignatura" EntitySet="Asignatura" />
+      <End Role="Horario_Estudiante_Reporte" EntitySet="Horario_Estudiante_Reporte" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Horario_E__Id_Di__5FB337D6" Association="Self.FK__Horario_E__Id_Di__5FB337D6">
+      <End Role="Dias" EntitySet="Dias" />
+      <End Role="Horario_Estudiante_Reporte" EntitySet="Horario_Estudiante_Reporte" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Horario_E__Id_Es__6B24EA82" Association="Self.FK__Horario_E__Id_Es__6B24EA82">
+      <End Role="Estudiante" EntitySet="Estudiante" />
+      <End Role="Horario_Estudiante_Reporte" EntitySet="Horario_Estudiante_Reporte" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Horario_E__Id_Pr__5DCAEF64" Association="Self.FK__Horario_E__Id_Pr__5DCAEF64">
+      <End Role="Profesor" EntitySet="Profesor" />
+      <End Role="Horario_Estudiante_Reporte" EntitySet="Horario_Estudiante_Reporte" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Horario_P__Id_As__59063A47" Association="Self.FK__Horario_P__Id_As__59063A47">
+      <End Role="Asignatura" EntitySet="Asignatura" />
+      <End Role="Horario_Profesor" EntitySet="Horario_Profesor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Horario_P__Id_Au__59FA5E80" Association="Self.FK__Horario_P__Id_Au__59FA5E80">
+      <End Role="Aula" EntitySet="Aula" />
+      <End Role="Horario_Profesor" EntitySet="Horario_Profesor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Horario_P__Id_Di__5AEE82B9" Association="Self.FK__Horario_P__Id_Di__5AEE82B9">
+      <End Role="Dias" EntitySet="Dias" />
+      <End Role="Horario_Profesor" EntitySet="Horario_Profesor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Horario_P__Id_Pr__5812160E" Association="Self.FK__Horario_P__Id_Pr__5812160E">
+      <End Role="Profesor" EntitySet="Profesor" />
+      <End Role="Horario_Profesor" EntitySet="Horario_Profesor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pesum__Id_Asigna__440B1D61" Association="Self.FK__Pesum__Id_Asigna__440B1D61">
+      <End Role="Asignatura" EntitySet="Asignatura" />
+      <End Role="Pesum" EntitySet="Pesum" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pesum__Id_Carrer__44FF419A" Association="Self.FK__Pesum__Id_Carrer__44FF419A">
+      <End Role="Carrera" EntitySet="Carrera" />
+      <End Role="Pesum" EntitySet="Pesum" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profesor___Id_Ad__5535A963" Association="Self.FK__Profesor___Id_Ad__5535A963">
+      <End Role="Administrador" EntitySet="Administrador" />
+      <End Role="Profesor_Soporte" EntitySet="Profesor_Soporte" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profesor___Id_Pr__5441852A" Association="Self.FK__Profesor___Id_Pr__5441852A">
+      <End Role="Profesor" EntitySet="Profesor" />
+      <End Role="Profesor_Soporte" EntitySet="Profesor_Soporte" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profesor__Id_Usu__4D94879B" Association="Self.FK__Profesor__Id_Usu__4D94879B">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Profesor" EntitySet="Profesor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tarea__Id_Estudi__6C190EBB" Association="Self.FK__Tarea__Id_Estudi__6C190EBB">
+      <End Role="Estudiante" EntitySet="Estudiante" />
+      <End Role="Tarea" EntitySet="Tarea" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

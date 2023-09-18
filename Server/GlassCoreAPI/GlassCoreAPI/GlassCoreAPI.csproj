@@ -60,11 +60,18 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.9\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.9\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -171,9 +178,73 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Administrador.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Asignatura.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Asignatura_Cod.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Aula.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Carrera.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dias.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estudiante.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estudiante_Soporte.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GlassCoreModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlassCoreModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GlassCoreModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GlassCoreModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlassCoreModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Horario_Estudiante_Reporte.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Horario_Profesor.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pesum.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ppFiltrarUsuarios_Result.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profesor.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profesor_Soporte.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tarea.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuario.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -186,6 +257,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\GlassCoreModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GlassCoreModel.edmx</DependentUpon>
+      <LastGenOutput>GlassCoreModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GlassCoreModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GlassCoreModel.edmx</DependentUpon>
+      <LastGenOutput>GlassCoreModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -207,6 +288,13 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Models\GlassCoreModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GlassCoreModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GlassCoreModel.edmx.diagram">
+      <DependentUpon>GlassCoreModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -227,10 +315,14 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -260,6 +352,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

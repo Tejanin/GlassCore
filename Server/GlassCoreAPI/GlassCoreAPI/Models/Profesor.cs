@@ -25,6 +25,7 @@ namespace GlassCoreAPI.Models
         public int Id_Profesor { get; set; }
         public Nullable<int> Id_Usuario { get; set; }
         public string Titulo { get; set; }
+        public string Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Horario_Estudiante_Reporte> Horario_Estudiante_Reporte { get; set; }

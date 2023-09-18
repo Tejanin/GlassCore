@@ -86,3 +86,10 @@ C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI
 C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\obj\Debug\GlassCoreAPI.dll
 C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\obj\Debug\GlassCoreAPI.pdb
 C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\GlassCoreAPI.xml
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\EntityFramework.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\EntityFramework.xml
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\System.Web.Cors.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\System.Web.Http.Cors.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\System.Web.Http.Cors.xml

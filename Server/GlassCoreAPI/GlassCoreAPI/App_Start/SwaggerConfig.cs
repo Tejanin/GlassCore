@@ -2,6 +2,7 @@ using System.Web.Http;
 using WebActivatorEx;
 using GlassCoreAPI;
 using Swashbuckle.Application;
+using System.IO;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -9,6 +10,10 @@ namespace GlassCoreAPI
 {
     public class SwaggerConfig
     {
+        protected static string GetXmlCommentedPath()
+        {
+            return Path.Combine(System.Web.HttpRuntime.AppDomainAppPath, "bin", "GlassCoreAPI.xml");
+        }
         public static void Register()
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
@@ -32,11 +37,12 @@ namespace GlassCoreAPI
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "GlassCoreAPI");
+                        c.SingleApiVersion("v1", "GlassCoreAPI").Description("API de la aplicacion de sistema academico GlasCore");
+
 
                         // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                         //
-                        //c.PrettyPrint();
+                        c.PrettyPrint();
 
                         // If your API has multiple versions, use "MultipleApiVersions" instead of "SingleApiVersion".
                         // In this case, you must provide a lambda that tells Swashbuckle which actions should be
@@ -62,9 +68,9 @@ namespace GlassCoreAPI
                             .Description("Basic HTTP Authentication");
                         
 						// NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
-                        c.ApiKey("apiKey")
-                            .Description("API Key Authentication")
-                            .Name("apiKey")
+                        c.ApiKey("Authorization")
+                            .Description("Introduce el Token JWT")
+                            .Name("Bearer")
                             .In("header");
                         
                         //c.OAuth2("oauth2")

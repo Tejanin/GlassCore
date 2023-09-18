@@ -23,6 +23,7 @@ namespace GlassCoreAPI.Models
         public int Id_Aula { get; set; }
     
         public virtual Asignatura Asignatura { get; set; }
+        public virtual Aula Aula { get; set; }
         public virtual Dias Dias { get; set; }
         public virtual Profesor Profesor { get; set; }
     }

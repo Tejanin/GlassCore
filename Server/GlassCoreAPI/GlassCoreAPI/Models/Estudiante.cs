@@ -28,6 +28,7 @@ namespace GlassCoreAPI.Models
         public Nullable<decimal> Indice_Periodico { get; set; }
         public string Honor { get; set; }
         public int Id_Carrera { get; set; }
+        public string Estado { get; set; }
         public Nullable<int> Epoints { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
