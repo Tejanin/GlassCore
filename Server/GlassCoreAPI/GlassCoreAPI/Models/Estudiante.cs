@@ -18,24 +18,24 @@ namespace GlassCoreAPI.Models
         public Estudiante()
         {
             this.Estudiante_Soporte = new HashSet<Estudiante_Soporte>();
-            this.Horario_Estudiante_Reporte = new HashSet<Horario_Estudiante_Reporte>();
+            this.Horario = new HashSet<Horario>();
             this.Tarea = new HashSet<Tarea>();
         }
     
         public int Id_Estudiante { get; set; }
         public int Id_Usuario { get; set; }
         public decimal Indice_General { get; set; }
-        public Nullable<decimal> Indice_Periodico { get; set; }
+        public decimal Indice_Trimestral { get; set; }
         public string Honor { get; set; }
         public int Id_Carrera { get; set; }
-        public string Estado { get; set; }
         public Nullable<int> Epoints { get; set; }
+        public int Trimestre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Estudiante_Soporte> Estudiante_Soporte { get; set; }
         public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Horario_Estudiante_Reporte> Horario_Estudiante_Reporte { get; set; }
+        public virtual ICollection<Horario> Horario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tarea> Tarea { get; set; }
     }

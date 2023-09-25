@@ -29,18 +29,20 @@ namespace GlassCoreAPI.Models
     
         public virtual DbSet<Administrador> Administrador { get; set; }
         public virtual DbSet<Asignatura> Asignatura { get; set; }
-        public virtual DbSet<Asignatura_Cod> Asignatura_Cod { get; set; }
         public virtual DbSet<Aula> Aula { get; set; }
         public virtual DbSet<Carrera> Carrera { get; set; }
-        public virtual DbSet<Dias> Dias { get; set; }
+        public virtual DbSet<Ciclo> Ciclo { get; set; }
+        public virtual DbSet<Codigo_Asignatura> Codigo_Asignatura { get; set; }
+        public virtual DbSet<Dia> Dia { get; set; }
         public virtual DbSet<Estudiante> Estudiante { get; set; }
         public virtual DbSet<Estudiante_Soporte> Estudiante_Soporte { get; set; }
-        public virtual DbSet<Horario_Estudiante_Reporte> Horario_Estudiante_Reporte { get; set; }
-        public virtual DbSet<Horario_Profesor> Horario_Profesor { get; set; }
-        public virtual DbSet<Pesum> Pesum { get; set; }
+        public virtual DbSet<Horario> Horario { get; set; }
+        public virtual DbSet<Pensum> Pensum { get; set; }
         public virtual DbSet<Profesor> Profesor { get; set; }
         public virtual DbSet<Profesor_Soporte> Profesor_Soporte { get; set; }
+        public virtual DbSet<Seccion> Seccion { get; set; }
         public virtual DbSet<Tarea> Tarea { get; set; }
+        public virtual DbSet<Titulo> Titulo { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
     
         public virtual ObjectResult<ppFiltrarUsuarios_Result> ppFiltrarUsuarios(string ordenamiento, string rol, string estado)
@@ -60,7 +62,7 @@ namespace GlassCoreAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ppFiltrarUsuarios_Result>("ppFiltrarUsuarios", ordenamientoParameter, rolParameter, estadoParameter);
         }
     
-        public virtual int ppInsertarUsuario(string rol, string nombre_Usuario, string apellido_Usuario, string imagen, string userName, string password, string email, string estado)
+        public virtual int ppInsertarUsuario(string rol, string nombre_Usuario, string apellido_Usuario, string imagen, Nullable<long> userName, string password, string email, string estado)
         {
             var rolParameter = rol != null ?
                 new ObjectParameter("Rol", rol) :
@@ -78,9 +80,9 @@ namespace GlassCoreAPI.Models
                 new ObjectParameter("Imagen", imagen) :
                 new ObjectParameter("Imagen", typeof(string));
     
-            var userNameParameter = userName != null ?
+            var userNameParameter = userName.HasValue ?
                 new ObjectParameter("UserName", userName) :
-                new ObjectParameter("UserName", typeof(string));
+                new ObjectParameter("UserName", typeof(long));
     
             var passwordParameter = password != null ?
                 new ObjectParameter("Password", password) :
@@ -97,20 +99,7 @@ namespace GlassCoreAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppInsertarUsuario", rolParameter, nombre_UsuarioParameter, apellido_UsuarioParameter, imagenParameter, userNameParameter, passwordParameter, emailParameter, estadoParameter);
         }
     
-        public virtual int ppModificarEstadoUsuario(Nullable<int> id_Usuario, string estado)
-        {
-            var id_UsuarioParameter = id_Usuario.HasValue ?
-                new ObjectParameter("Id_Usuario", id_Usuario) :
-                new ObjectParameter("Id_Usuario", typeof(int));
-    
-            var estadoParameter = estado != null ?
-                new ObjectParameter("Estado", estado) :
-                new ObjectParameter("Estado", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppModificarEstadoUsuario", id_UsuarioParameter, estadoParameter);
-        }
-    
-        public virtual int ppModificarUsuario(Nullable<int> id_Usuario, string nombre_Usuario, string apellido_Usuario, string email, string imagen, string estado, string userName, string password, string rol)
+        public virtual int ppModificarUsuario(Nullable<int> id_Usuario, string nombre_Usuario, string apellido_Usuario, string email, string imagen, string estado, Nullable<long> userName, string password, string rol)
         {
             var id_UsuarioParameter = id_Usuario.HasValue ?
                 new ObjectParameter("Id_Usuario", id_Usuario) :
@@ -136,9 +125,9 @@ namespace GlassCoreAPI.Models
                 new ObjectParameter("Estado", estado) :
                 new ObjectParameter("Estado", typeof(string));
     
-            var userNameParameter = userName != null ?
+            var userNameParameter = userName.HasValue ?
                 new ObjectParameter("UserName", userName) :
-                new ObjectParameter("UserName", typeof(string));
+                new ObjectParameter("UserName", typeof(long));
     
             var passwordParameter = password != null ?
                 new ObjectParameter("Password", password) :
@@ -149,6 +138,19 @@ namespace GlassCoreAPI.Models
                 new ObjectParameter("Rol", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppModificarUsuario", id_UsuarioParameter, nombre_UsuarioParameter, apellido_UsuarioParameter, emailParameter, imagenParameter, estadoParameter, userNameParameter, passwordParameter, rolParameter);
+        }
+    
+        public virtual int ppLogin(Nullable<long> userName, string password, ObjectParameter tipoUsuario)
+        {
+            var userNameParameter = userName.HasValue ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(long));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppLogin", userNameParameter, passwordParameter, tipoUsuario);
         }
     }
 }

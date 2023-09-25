@@ -189,16 +189,19 @@
     <Compile Include="Models\Asignatura.cs">
       <DependentUpon>GlassCoreModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Asignatura_Cod.cs">
-      <DependentUpon>GlassCoreModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Aula.cs">
       <DependentUpon>GlassCoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Carrera.cs">
       <DependentUpon>GlassCoreModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Dias.cs">
+    <Compile Include="Models\Ciclo.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Codigo_Asignatura.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dia.cs">
       <DependentUpon>GlassCoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Estudiante.cs">
@@ -222,13 +225,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GlassCoreModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Horario_Estudiante_Reporte.cs">
+    <Compile Include="Models\Horario.cs">
       <DependentUpon>GlassCoreModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Horario_Profesor.cs">
-      <DependentUpon>GlassCoreModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Pesum.cs">
+    <Compile Include="Models\Pensum.cs">
       <DependentUpon>GlassCoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ppFiltrarUsuarios_Result.cs">
@@ -240,7 +240,13 @@
     <Compile Include="Models\Profesor_Soporte.cs">
       <DependentUpon>GlassCoreModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Seccion.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Tarea.cs">
+      <DependentUpon>GlassCoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Titulo.cs">
       <DependentUpon>GlassCoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuario.cs">

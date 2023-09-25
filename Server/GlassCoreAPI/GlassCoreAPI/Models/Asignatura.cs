@@ -17,22 +17,21 @@ namespace GlassCoreAPI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Asignatura()
         {
-            this.Horario_Estudiante_Reporte = new HashSet<Horario_Estudiante_Reporte>();
-            this.Horario_Profesor = new HashSet<Horario_Profesor>();
-            this.Pesum = new HashSet<Pesum>();
+            this.Pensum = new HashSet<Pensum>();
+            this.Seccion = new HashSet<Seccion>();
         }
     
         public int Id_Asignatura { get; set; }
-        public string Asignatura1 { get; set; }
-        public int Codigo_Asignatura { get; set; }
+        public int Num_Asignatura { get; set; }
+        public string Nombre_Asignatura { get; set; }
+        public int Id_Codigo_Asignatura { get; set; }
         public int Creditos { get; set; }
+        public string Estado { get; set; }
     
-        public virtual Asignatura_Cod Asignatura_Cod { get; set; }
+        public virtual Codigo_Asignatura Codigo_Asignatura { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Horario_Estudiante_Reporte> Horario_Estudiante_Reporte { get; set; }
+        public virtual ICollection<Pensum> Pensum { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Horario_Profesor> Horario_Profesor { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pesum> Pesum { get; set; }
+        public virtual ICollection<Seccion> Seccion { get; set; }
     }
 }

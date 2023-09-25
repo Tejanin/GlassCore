@@ -12,23 +12,17 @@ namespace GlassCoreAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Profesor
+    public partial class Ciclo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Profesor()
+        public Ciclo()
         {
-            this.Profesor_Soporte = new HashSet<Profesor_Soporte>();
             this.Seccion = new HashSet<Seccion>();
         }
     
-        public int Id_Profesor { get; set; }
-        public int Id_Usuario { get; set; }
-        public int Id_Titulo { get; set; }
+        public int Id_Ciclo { get; set; }
+        public string Desc_Ciclo { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Profesor_Soporte> Profesor_Soporte { get; set; }
-        public virtual Titulo Titulo { get; set; }
-        public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Seccion> Seccion { get; set; }
     }

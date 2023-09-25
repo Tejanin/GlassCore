@@ -25,13 +25,13 @@ namespace GlassCoreAPI.Models
         public int Id_Usuario { get; set; }
         public string Nombre_Usuario { get; set; }
         public string Apellido_Usuario { get; set; }
-        public string Imagen { get; set; }
-        public string Rol { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public Nullable<System.DateTime> Fecha_Ingreso { get; set; }
         public string Email { get; set; }
+        public string Rol { get; set; }
         public string Estado { get; set; }
+        public long UserName { get; set; }
+        public string Password { get; set; }
+        public string Imagen { get; set; }
+        public System.DateTime Fecha_Ingreso { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Administrador> Administrador { get; set; }

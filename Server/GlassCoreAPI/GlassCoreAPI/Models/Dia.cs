@@ -12,13 +12,18 @@ namespace GlassCoreAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Pesum
+    public partial class Dia
     {
-        public int Id_Carrera { get; set; }
-        public int Id_Asignatura { get; set; }
-        public int Año { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Dia()
+        {
+            this.Seccion = new HashSet<Seccion>();
+        }
     
-        public virtual Asignatura Asignatura { get; set; }
-        public virtual Carrera Carrera { get; set; }
+        public int Id_Dia { get; set; }
+        public string Nombre_Dia { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Seccion> Seccion { get; set; }
     }
 }

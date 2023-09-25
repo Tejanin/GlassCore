@@ -12,19 +12,13 @@ namespace GlassCoreAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Carrera
+    public partial class Pensum
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Carrera()
-        {
-            this.Pensum = new HashSet<Pensum>();
-        }
-    
         public int Id_Carrera { get; set; }
-        public int Permanencia { get; set; }
-        public string Nombre_Carrera { get; set; }
+        public int Id_Asignatura { get; set; }
+        public int Año { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pensum> Pensum { get; set; }
+        public virtual Asignatura Asignatura { get; set; }
+        public virtual Carrera Carrera { get; set; }
     }
 }

@@ -12,19 +12,16 @@ namespace GlassCoreAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Horario_Profesor
+    public partial class Horario
     {
-        public int Id_Profesor { get; set; }
-        public int Id_Asignatura { get; set; }
-        public int Seccion { get; set; }
-        public System.TimeSpan Hora_Inicio { get; set; }
-        public System.TimeSpan Hora_Cierre { get; set; }
-        public int Id_Dia { get; set; }
+        public int Id { get; set; }
+        public int Id_Estudiante { get; set; }
+        public int Id_Seccion { get; set; }
+        public Nullable<int> Calificacion_MD { get; set; }
+        public string Calificacion_Final { get; set; }
         public int Id_Aula { get; set; }
     
-        public virtual Asignatura Asignatura { get; set; }
         public virtual Aula Aula { get; set; }
-        public virtual Dias Dias { get; set; }
-        public virtual Profesor Profesor { get; set; }
+        public virtual Estudiante Estudiante { get; set; }
     }
 }

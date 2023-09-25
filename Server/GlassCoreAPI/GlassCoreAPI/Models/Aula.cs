@@ -17,13 +17,13 @@ namespace GlassCoreAPI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Aula()
         {
-            this.Horario_Profesor = new HashSet<Horario_Profesor>();
+            this.Horario = new HashSet<Horario>();
         }
     
         public int Id_Aula { get; set; }
-        public string Aula1 { get; set; }
+        public string Nombre_Aula { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Horario_Profesor> Horario_Profesor { get; set; }
+        public virtual ICollection<Horario> Horario { get; set; }
     }
 }

@@ -12,18 +12,18 @@ namespace GlassCoreAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Asignatura_Cod
+    public partial class Titulo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Asignatura_Cod()
+        public Titulo()
         {
-            this.Asignatura = new HashSet<Asignatura>();
+            this.Profesor = new HashSet<Profesor>();
         }
     
-        public int Id_Codigo_Asignatura { get; set; }
-        public string Codigo_Asignatura { get; set; }
+        public int Id_Titulo { get; set; }
+        public string Nombre_Titulo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Asignatura> Asignatura { get; set; }
+        public virtual ICollection<Profesor> Profesor { get; set; }
     }
 }

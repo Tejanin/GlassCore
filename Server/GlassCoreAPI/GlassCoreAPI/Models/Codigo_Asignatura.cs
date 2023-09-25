@@ -12,21 +12,18 @@ namespace GlassCoreAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Dias
+    public partial class Codigo_Asignatura
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Dias()
+        public Codigo_Asignatura()
         {
-            this.Horario_Estudiante_Reporte = new HashSet<Horario_Estudiante_Reporte>();
-            this.Horario_Profesor = new HashSet<Horario_Profesor>();
+            this.Asignatura = new HashSet<Asignatura>();
         }
     
-        public int Id_Dia { get; set; }
-        public string Dia { get; set; }
+        public int Id_Codigo_Asignatura { get; set; }
+        public string Codigo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Horario_Estudiante_Reporte> Horario_Estudiante_Reporte { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Horario_Profesor> Horario_Profesor { get; set; }
+        public virtual ICollection<Asignatura> Asignatura { get; set; }
     }
 }
