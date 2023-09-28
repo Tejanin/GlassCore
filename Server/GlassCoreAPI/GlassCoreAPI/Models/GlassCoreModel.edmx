@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="GlassCoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="GlassCoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administrador">
           <Key>
             <PropertyRef Name="Id_Administrador" />
@@ -517,7 +517,8 @@
             <End Role="Tarea" EntitySet="Tarea" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GlassCoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -558,9 +559,9 @@
             <PropertyRef Name="Id_Carrera" />
           </Key>
           <Property Name="Id_Carrera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Carrera" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Permanencia" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pensum" Relationship="Self.FK__Pensum__Id_Carre__73501C2F" FromRole="Carrera" ToRole="Pensum" />
-          <Property Name="Nombre_Carrera" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Ciclo">
           <Key>
@@ -1052,6 +1053,11 @@
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="Estado" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="ppLogin">
+            <Parameter Name="UserName" Mode="In" Type="Int64" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="TipoUsuario" Mode="InOut" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="ppModificarUsuario">
             <Parameter Name="Id_Usuario" Mode="In" Type="Int32" />
             <Parameter Name="Nombre_Usuario" Mode="In" Type="String" />
@@ -1063,13 +1069,9 @@
             <Parameter Name="Password" Mode="In" Type="String" />
             <Parameter Name="Rol" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="ppLogin">
-            <Parameter Name="UserName" Mode="In" Type="Int64" />
-            <Parameter Name="Password" Mode="In" Type="String" />
-            <Parameter Name="TipoUsuario" Mode="InOut" Type="Int32" />
-          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="ppFiltrarUsuarios_Result">
+          <Property Type="Int32" Name="Id_Usuario" Nullable="false" />
           <Property Type="String" Name="Nombre_Usuario" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="Apellido_Usuario" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="Imagen" Nullable="false" MaxLength="400" />
@@ -1115,8 +1117,8 @@
           <EntitySetMapping Name="Carrera">
             <EntityTypeMapping TypeName="GlassCoreModel.Carrera">
               <MappingFragment StoreEntitySet="Carrera">
-                <ScalarProperty Name="Nombre_Carrera" ColumnName="Nombre_Carrera" />
                 <ScalarProperty Name="Id_Carrera" ColumnName="Id_Carrera" />
+                <ScalarProperty Name="Nombre_Carrera" ColumnName="Nombre_Carrera" />
                 <ScalarProperty Name="Permanencia" ColumnName="Permanencia" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1269,6 +1271,7 @@
           <FunctionImportMapping FunctionImportName="ppFiltrarUsuarios" FunctionName="GlassCoreModel.Store.ppFiltrarUsuarios">
             <ResultMapping>
               <ComplexTypeMapping TypeName="GlassCoreModel.ppFiltrarUsuarios_Result">
+                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
                 <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
                 <ScalarProperty Name="Apellido_Usuario" ColumnName="Apellido_Usuario" />
                 <ScalarProperty Name="Imagen" ColumnName="Imagen" />
@@ -1280,8 +1283,8 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ppInsertarUsuario" FunctionName="GlassCoreModel.Store.ppInsertarUsuario" />
-          <FunctionImportMapping FunctionImportName="ppModificarUsuario" FunctionName="GlassCoreModel.Store.ppModificarUsuario" />
           <FunctionImportMapping FunctionImportName="ppLogin" FunctionName="GlassCoreModel.Store.ppLogin" />
+          <FunctionImportMapping FunctionImportName="ppModificarUsuario" FunctionName="GlassCoreModel.Store.ppModificarUsuario" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

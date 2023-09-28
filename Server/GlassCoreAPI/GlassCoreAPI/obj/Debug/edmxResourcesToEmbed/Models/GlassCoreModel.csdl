@@ -37,9 +37,9 @@
       <PropertyRef Name="Id_Carrera" />
     </Key>
     <Property Name="Id_Carrera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Carrera" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Permanencia" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pensum" Relationship="Self.FK__Pensum__Id_Carre__73501C2F" FromRole="Carrera" ToRole="Pensum" />
-    <Property Name="Nombre_Carrera" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Ciclo">
     <Key>
@@ -531,6 +531,11 @@
       <Parameter Name="Email" Mode="In" Type="String" />
       <Parameter Name="Estado" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="ppLogin">
+      <Parameter Name="UserName" Mode="In" Type="Int64" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="TipoUsuario" Mode="InOut" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="ppModificarUsuario">
       <Parameter Name="Id_Usuario" Mode="In" Type="Int32" />
       <Parameter Name="Nombre_Usuario" Mode="In" Type="String" />
@@ -542,13 +547,9 @@
       <Parameter Name="Password" Mode="In" Type="String" />
       <Parameter Name="Rol" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="ppLogin">
-      <Parameter Name="UserName" Mode="In" Type="Int64" />
-      <Parameter Name="Password" Mode="In" Type="String" />
-      <Parameter Name="TipoUsuario" Mode="InOut" Type="Int32" />
-    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="ppFiltrarUsuarios_Result">
+    <Property Type="Int32" Name="Id_Usuario" Nullable="false" />
     <Property Type="String" Name="Nombre_Usuario" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="Apellido_Usuario" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="Imagen" Nullable="false" MaxLength="400" />

@@ -99,6 +99,19 @@ namespace GlassCoreAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppInsertarUsuario", rolParameter, nombre_UsuarioParameter, apellido_UsuarioParameter, imagenParameter, userNameParameter, passwordParameter, emailParameter, estadoParameter);
         }
     
+        public virtual int ppLogin(Nullable<long> userName, string password, ObjectParameter tipoUsuario)
+        {
+            var userNameParameter = userName.HasValue ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(long));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppLogin", userNameParameter, passwordParameter, tipoUsuario);
+        }
+    
         public virtual int ppModificarUsuario(Nullable<int> id_Usuario, string nombre_Usuario, string apellido_Usuario, string email, string imagen, string estado, Nullable<long> userName, string password, string rol)
         {
             var id_UsuarioParameter = id_Usuario.HasValue ?
@@ -138,19 +151,6 @@ namespace GlassCoreAPI.Models
                 new ObjectParameter("Rol", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppModificarUsuario", id_UsuarioParameter, nombre_UsuarioParameter, apellido_UsuarioParameter, emailParameter, imagenParameter, estadoParameter, userNameParameter, passwordParameter, rolParameter);
-        }
-    
-        public virtual int ppLogin(Nullable<long> userName, string password, ObjectParameter tipoUsuario)
-        {
-            var userNameParameter = userName.HasValue ?
-                new ObjectParameter("UserName", userName) :
-                new ObjectParameter("UserName", typeof(long));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("Password", password) :
-                new ObjectParameter("Password", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppLogin", userNameParameter, passwordParameter, tipoUsuario);
         }
     }
 }

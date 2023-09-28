@@ -21,8 +21,8 @@ namespace GlassCoreAPI.Models
         }
     
         public int Id_Carrera { get; set; }
-        public int Permanencia { get; set; }
         public string Nombre_Carrera { get; set; }
+        public int Permanencia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pensum> Pensum { get; set; }

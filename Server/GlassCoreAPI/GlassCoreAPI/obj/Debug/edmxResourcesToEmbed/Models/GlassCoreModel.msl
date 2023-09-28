@@ -32,8 +32,8 @@
     <EntitySetMapping Name="Carrera">
       <EntityTypeMapping TypeName="GlassCoreModel.Carrera">
         <MappingFragment StoreEntitySet="Carrera">
-          <ScalarProperty Name="Nombre_Carrera" ColumnName="Nombre_Carrera" />
           <ScalarProperty Name="Id_Carrera" ColumnName="Id_Carrera" />
+          <ScalarProperty Name="Nombre_Carrera" ColumnName="Nombre_Carrera" />
           <ScalarProperty Name="Permanencia" ColumnName="Permanencia" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -186,6 +186,7 @@
     <FunctionImportMapping FunctionImportName="ppFiltrarUsuarios" FunctionName="GlassCoreModel.Store.ppFiltrarUsuarios">
       <ResultMapping>
         <ComplexTypeMapping TypeName="GlassCoreModel.ppFiltrarUsuarios_Result">
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
           <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
           <ScalarProperty Name="Apellido_Usuario" ColumnName="Apellido_Usuario" />
           <ScalarProperty Name="Imagen" ColumnName="Imagen" />
@@ -197,7 +198,7 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="ppInsertarUsuario" FunctionName="GlassCoreModel.Store.ppInsertarUsuario" />
-    <FunctionImportMapping FunctionImportName="ppModificarUsuario" FunctionName="GlassCoreModel.Store.ppModificarUsuario" />
     <FunctionImportMapping FunctionImportName="ppLogin" FunctionName="GlassCoreModel.Store.ppLogin" />
+    <FunctionImportMapping FunctionImportName="ppModificarUsuario" FunctionName="GlassCoreModel.Store.ppModificarUsuario" />
   </EntityContainerMapping>
 </Mapping>

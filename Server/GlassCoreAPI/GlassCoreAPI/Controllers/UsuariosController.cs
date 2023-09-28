@@ -21,7 +21,7 @@ namespace GlassCoreAPI.Controllers
         private GlassCoreEntities db = new GlassCoreEntities();
 
         // GET: api/Usuarios
-        public List<ppFiltrarUsuarios_Result> GetUsuarios(string Ordenamiento = "ASC", string Rol = null, string Estado = null)
+        public List<ppFiltrarUsuarios_Result> GetUsuarios(string Ordenamiento = null, string Rol = null, string Estado = null)
         {
             var usuarios = db.ppFiltrarUsuarios(Ordenamiento, Rol, Estado).ToList();
             return usuarios;
@@ -53,9 +53,10 @@ namespace GlassCoreAPI.Controllers
         }
 
 
-        
 
-        public IHttpActionResult PostUsuario(string Rol, long UserName, string Password, string Email, string Estado, string Nombre_Usuario, string Apellido_Usuario, string Imagen, string Carrera = null, string Titulo = null)
+        [HttpPost]
+        [Route("api/Usuarios/postUsuario")]
+        public IHttpActionResult PostUsuario(string Rol, long UserName, string Password, string Email, string Estado, string Nombre_Usuario, string Apellido_Usuario, string Imagen =null)
         {
             
 
@@ -84,26 +85,7 @@ namespace GlassCoreAPI.Controllers
 
         }
 
-        [HttpPost]
-        [Route("api/Usuarios/Login")]
-        public int PostLogin(long UserName, string Password)
-        {
-            // Declarar un parámetro de salida para recibir el resultado del stored procedure
-            SqlParameter resultadoParam = new SqlParameter("@TipoUsuario", SqlDbType.Int);
-            resultadoParam.Direction = ParameterDirection.Output;
-
-            // Llamar al stored procedure ppLogin y pasar el parámetro de salida
-            db.Database.ExecuteSqlCommand("EXEC ppLogin @UserName, @Password, @TipoUsuario OUTPUT",
-                new SqlParameter("@UserName", UserName),
-                new SqlParameter("@Password", Password),
-                resultadoParam);
-
-            // Obtener el valor de retorno del parámetro de salida
-            int resultado = (int)resultadoParam.Value;
-
-            return resultado;
-        }
-
+        
 
         protected override void Dispose(bool disposing)
         {
