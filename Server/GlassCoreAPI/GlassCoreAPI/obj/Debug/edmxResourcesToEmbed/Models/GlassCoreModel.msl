@@ -186,7 +186,6 @@
     <FunctionImportMapping FunctionImportName="ppFiltrarUsuarios" FunctionName="GlassCoreModel.Store.ppFiltrarUsuarios">
       <ResultMapping>
         <ComplexTypeMapping TypeName="GlassCoreModel.ppFiltrarUsuarios_Result">
-          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
           <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
           <ScalarProperty Name="Apellido_Usuario" ColumnName="Apellido_Usuario" />
           <ScalarProperty Name="Imagen" ColumnName="Imagen" />
@@ -198,7 +197,6 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="ppInsertarUsuario" FunctionName="GlassCoreModel.Store.ppInsertarUsuario" />
-    <FunctionImportMapping FunctionImportName="ppLogin" FunctionName="GlassCoreModel.Store.ppLogin" />
     <FunctionImportMapping FunctionImportName="ppModificarUsuario" FunctionName="GlassCoreModel.Store.ppModificarUsuario" />
   </EntityContainerMapping>
 </Mapping>

@@ -11,7 +11,7 @@ namespace GlassCoreAPI.Controllers
 {
     internal static class TokenGenerator
     {
-        public static string GenerateTokenJwt(long username, int id , string rol)
+        public static string GenerateTokenJwt(string username, int id_user , string rol, int id_typeUser)
         {
             // appsetting for Token JWT
           
@@ -30,8 +30,9 @@ namespace GlassCoreAPI.Controllers
             // create a claimsIdentity
             var claims = new List<Claim>
               {
-                   new Claim("Matricula", username.ToString()),
-                   new Claim("UserId", id.ToString()), // Agregar el ID como Claim personalizado
+                   new Claim("Matricula", username),
+                   new Claim("UserId", id_user.ToString()),
+                   new Claim("TypeUserId", id_typeUser.ToString()),// Agregar el ID como Claim personalizado
                    new Claim(ClaimTypes.Role, rol),
                   
               };

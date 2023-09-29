@@ -121,3 +121,5 @@ C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI
 C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\System.Text.Json.xml
 C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\System.ValueTuple.xml
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\BCrypt.Net-Next.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Aseguramiento\Server\GlassCoreAPI\GlassCoreAPI\bin\BCrypt.Net-Next.xml

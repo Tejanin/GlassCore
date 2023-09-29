@@ -62,7 +62,7 @@ namespace GlassCoreAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ppFiltrarUsuarios_Result>("ppFiltrarUsuarios", ordenamientoParameter, rolParameter, estadoParameter);
         }
     
-        public virtual int ppInsertarUsuario(string rol, string nombre_Usuario, string apellido_Usuario, string imagen, Nullable<long> userName, string password, string email, string estado)
+        public virtual int ppInsertarUsuario(string rol, string nombre_Usuario, string apellido_Usuario, string imagen, string userName, string password, string email, string estado)
         {
             var rolParameter = rol != null ?
                 new ObjectParameter("Rol", rol) :
@@ -80,9 +80,9 @@ namespace GlassCoreAPI.Models
                 new ObjectParameter("Imagen", imagen) :
                 new ObjectParameter("Imagen", typeof(string));
     
-            var userNameParameter = userName.HasValue ?
+            var userNameParameter = userName != null ?
                 new ObjectParameter("UserName", userName) :
-                new ObjectParameter("UserName", typeof(long));
+                new ObjectParameter("UserName", typeof(string));
     
             var passwordParameter = password != null ?
                 new ObjectParameter("Password", password) :
@@ -99,20 +99,7 @@ namespace GlassCoreAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppInsertarUsuario", rolParameter, nombre_UsuarioParameter, apellido_UsuarioParameter, imagenParameter, userNameParameter, passwordParameter, emailParameter, estadoParameter);
         }
     
-        public virtual int ppLogin(Nullable<long> userName, string password, ObjectParameter tipoUsuario)
-        {
-            var userNameParameter = userName.HasValue ?
-                new ObjectParameter("UserName", userName) :
-                new ObjectParameter("UserName", typeof(long));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("Password", password) :
-                new ObjectParameter("Password", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppLogin", userNameParameter, passwordParameter, tipoUsuario);
-        }
-    
-        public virtual int ppModificarUsuario(Nullable<int> id_Usuario, string nombre_Usuario, string apellido_Usuario, string email, string imagen, string estado, Nullable<long> userName, string password, string rol)
+        public virtual int ppModificarUsuario(Nullable<int> id_Usuario, string nombre_Usuario, string apellido_Usuario, string email, string imagen, string estado, string userName, string password, string rol)
         {
             var id_UsuarioParameter = id_Usuario.HasValue ?
                 new ObjectParameter("Id_Usuario", id_Usuario) :
@@ -138,9 +125,9 @@ namespace GlassCoreAPI.Models
                 new ObjectParameter("Estado", estado) :
                 new ObjectParameter("Estado", typeof(string));
     
-            var userNameParameter = userName.HasValue ?
+            var userNameParameter = userName != null ?
                 new ObjectParameter("UserName", userName) :
-                new ObjectParameter("UserName", typeof(long));
+                new ObjectParameter("UserName", typeof(string));
     
             var passwordParameter = password != null ?
                 new ObjectParameter("Password", password) :

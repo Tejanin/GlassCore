@@ -13,12 +13,11 @@ namespace GlassCoreAPI.Models
     
     public partial class ppFiltrarUsuarios_Result
     {
-        public int Id_Usuario { get; set; }
         public string Nombre_Usuario { get; set; }
         public string Apellido_Usuario { get; set; }
         public string Imagen { get; set; }
         public string Rol { get; set; }
-        public long UserName { get; set; }
+        public string UserName { get; set; }
         public string Email { get; set; }
         public string Estado { get; set; }
     }

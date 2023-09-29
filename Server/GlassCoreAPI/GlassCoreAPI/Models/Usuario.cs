@@ -28,7 +28,7 @@ namespace GlassCoreAPI.Models
         public string Email { get; set; }
         public string Rol { get; set; }
         public string Estado { get; set; }
-        public long UserName { get; set; }
+        public string UserName { get; set; }
         public string Password { get; set; }
         public string Imagen { get; set; }
         public System.DateTime Fecha_Ingreso { get; set; }

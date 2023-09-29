@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GlassCoreModelStoreContainer" CdmEntityContainer="GlassCoreEntities">
+    <EntitySetMapping Name="Administrador">
+      <EntityTypeMapping TypeName="GlassCoreModel.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="Id_Administrador" ColumnName="Id_Administrador" />
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Asignatura">
+      <EntityTypeMapping TypeName="GlassCoreModel.Asignatura">
+        <MappingFragment StoreEntitySet="Asignatura">
+          <ScalarProperty Name="Id_Asignatura" ColumnName="Id_Asignatura" />
+          <ScalarProperty Name="Num_Asignatura" ColumnName="Num_Asignatura" />
+          <ScalarProperty Name="Nombre_Asignatura" ColumnName="Nombre_Asignatura" />
+          <ScalarProperty Name="Id_Codigo_Asignatura" ColumnName="Id_Codigo_Asignatura" />
+          <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aula">
+      <EntityTypeMapping TypeName="GlassCoreModel.Aula">
+        <MappingFragment StoreEntitySet="Aula">
+          <ScalarProperty Name="Id_Aula" ColumnName="Id_Aula" />
+          <ScalarProperty Name="Nombre_Aula" ColumnName="Nombre_Aula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carrera">
+      <EntityTypeMapping TypeName="GlassCoreModel.Carrera">
+        <MappingFragment StoreEntitySet="Carrera">
+          <ScalarProperty Name="Id_Carrera" ColumnName="Id_Carrera" />
+          <ScalarProperty Name="Nombre_Carrera" ColumnName="Nombre_Carrera" />
+          <ScalarProperty Name="Permanencia" ColumnName="Permanencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ciclo">
+      <EntityTypeMapping TypeName="GlassCoreModel.Ciclo">
+        <MappingFragment StoreEntitySet="Ciclo">
+          <ScalarProperty Name="Id_Ciclo" ColumnName="Id_Ciclo" />
+          <ScalarProperty Name="Desc_Ciclo" ColumnName="Desc_Ciclo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Codigo_Asignatura">
+      <EntityTypeMapping TypeName="GlassCoreModel.Codigo_Asignatura">
+        <MappingFragment StoreEntitySet="Codigo_Asignatura">
+          <ScalarProperty Name="Id_Codigo_Asignatura" ColumnName="Id_Codigo_Asignatura" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dia">
+      <EntityTypeMapping TypeName="GlassCoreModel.Dia">
+        <MappingFragment StoreEntitySet="Dia">
+          <ScalarProperty Name="Id_Dia" ColumnName="Id_Dia" />
+          <ScalarProperty Name="Nombre_Dia" ColumnName="Nombre_Dia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estudiante">
+      <EntityTypeMapping TypeName="GlassCoreModel.Estudiante">
+        <MappingFragment StoreEntitySet="Estudiante">
+          <ScalarProperty Name="Id_Estudiante" ColumnName="Id_Estudiante" />
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Indice_General" ColumnName="Indice_General" />
+          <ScalarProperty Name="Indice_Trimestral" ColumnName="Indice_Trimestral" />
+          <ScalarProperty Name="Honor" ColumnName="Honor" />
+          <ScalarProperty Name="Id_Carrera" ColumnName="Id_Carrera" />
+          <ScalarProperty Name="Epoints" ColumnName="Epoints" />
+          <ScalarProperty Name="Trimestre" ColumnName="Trimestre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estudiante_Soporte">
+      <EntityTypeMapping TypeName="GlassCoreModel.Estudiante_Soporte">
+        <MappingFragment StoreEntitySet="Estudiante_Soporte">
+          <ScalarProperty Name="Id_Administrador" ColumnName="Id_Administrador" />
+          <ScalarProperty Name="Id_Estudiante" ColumnName="Id_Estudiante" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Id_Nota" ColumnName="Id_Nota" />
+          <ScalarProperty Name="Fecha_Enviada" ColumnName="Fecha_Enviada" />
+          <ScalarProperty Name="Fecha_Respondida" ColumnName="Fecha_Respondida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horario">
+      <EntityTypeMapping TypeName="GlassCoreModel.Horario">
+        <MappingFragment StoreEntitySet="Horario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Estudiante" ColumnName="Id_Estudiante" />
+          <ScalarProperty Name="Id_Seccion" ColumnName="Id_Seccion" />
+          <ScalarProperty Name="Calificacion_MD" ColumnName="Calificacion_MD" />
+          <ScalarProperty Name="Calificacion_Final" ColumnName="Calificacion_Final" />
+          <ScalarProperty Name="Id_Aula" ColumnName="Id_Aula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pensum">
+      <EntityTypeMapping TypeName="GlassCoreModel.Pensum">
+        <MappingFragment StoreEntitySet="Pensum">
+          <ScalarProperty Name="Id_Carrera" ColumnName="Id_Carrera" />
+          <ScalarProperty Name="Id_Asignatura" ColumnName="Id_Asignatura" />
+          <ScalarProperty Name="Año" ColumnName="Año" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profesor">
+      <EntityTypeMapping TypeName="GlassCoreModel.Profesor">
+        <MappingFragment StoreEntitySet="Profesor">
+          <ScalarProperty Name="Id_Profesor" ColumnName="Id_Profesor" />
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Id_Titulo" ColumnName="Id_Titulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profesor_Soporte">
+      <EntityTypeMapping TypeName="GlassCoreModel.Profesor_Soporte">
+        <MappingFragment StoreEntitySet="Profesor_Soporte">
+          <ScalarProperty Name="Id_Administrador" ColumnName="Id_Administrador" />
+          <ScalarProperty Name="Id_Profesor" ColumnName="Id_Profesor" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Id_Nota" ColumnName="Id_Nota" />
+          <ScalarProperty Name="Fecha_Enviada" ColumnName="Fecha_Enviada" />
+          <ScalarProperty Name="Fecha_Respondida" ColumnName="Fecha_Respondida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seccion">
+      <EntityTypeMapping TypeName="GlassCoreModel.Seccion">
+        <MappingFragment StoreEntitySet="Seccion">
+          <ScalarProperty Name="Id_Seccion" ColumnName="Id_Seccion" />
+          <ScalarProperty Name="Id_Asignatura" ColumnName="Id_Asignatura" />
+          <ScalarProperty Name="Num_Seccion" ColumnName="Num_Seccion" />
+          <ScalarProperty Name="Id_Profesor" ColumnName="Id_Profesor" />
+          <ScalarProperty Name="Id_Ciclo" ColumnName="Id_Ciclo" />
+          <ScalarProperty Name="Ano" ColumnName="Ano" />
+          <ScalarProperty Name="Hora_Inicio" ColumnName="Hora_Inicio" />
+          <ScalarProperty Name="Hora_Salida" ColumnName="Hora_Salida" />
+          <ScalarProperty Name="Id_Dia" ColumnName="Id_Dia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tarea">
+      <EntityTypeMapping TypeName="GlassCoreModel.Tarea">
+        <MappingFragment StoreEntitySet="Tarea">
+          <ScalarProperty Name="Id_Tarea" ColumnName="Id_Tarea" />
+          <ScalarProperty Name="Id_Estudiante" ColumnName="Id_Estudiante" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Cierre" ColumnName="Fecha_Cierre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titulo">
+      <EntityTypeMapping TypeName="GlassCoreModel.Titulo">
+        <MappingFragment StoreEntitySet="Titulo">
+          <ScalarProperty Name="Id_Titulo" ColumnName="Id_Titulo" />
+          <ScalarProperty Name="Nombre_Titulo" ColumnName="Nombre_Titulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="GlassCoreModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
+          <ScalarProperty Name="Apellido_Usuario" ColumnName="Apellido_Usuario" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Fecha_Ingreso" ColumnName="Fecha_Ingreso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ppFiltrarUsuarios" FunctionName="GlassCoreModel.Store.ppFiltrarUsuarios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GlassCoreModel.ppFiltrarUsuarios_Result">
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
+          <ScalarProperty Name="Apellido_Usuario" ColumnName="Apellido_Usuario" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ppInsertarUsuario" FunctionName="GlassCoreModel.Store.ppInsertarUsuario" />
+    <FunctionImportMapping FunctionImportName="ppLogin" FunctionName="GlassCoreModel.Store.ppLogin" />
+    <FunctionImportMapping FunctionImportName="ppModificarUsuario" FunctionName="GlassCoreModel.Store.ppModificarUsuario" />
+  </EntityContainerMapping>
+</Mapping>

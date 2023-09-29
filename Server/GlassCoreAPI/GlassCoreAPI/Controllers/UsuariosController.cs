@@ -11,16 +11,22 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using GlassCoreAPI.DTOs;
 using GlassCoreAPI.Models;
+
 
 namespace GlassCoreAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+  
+   
     public class UsuariosController : ApiController
     {
         private GlassCoreEntities db = new GlassCoreEntities();
 
         // GET: api/Usuarios
+
+        [HttpGet]
         public List<ppFiltrarUsuarios_Result> GetUsuarios(string Ordenamiento = null, string Rol = null, string Estado = null)
         {
             var usuarios = db.ppFiltrarUsuarios(Ordenamiento, Rol, Estado).ToList();
@@ -29,6 +35,7 @@ namespace GlassCoreAPI.Controllers
 
         // GET: api/Usuarios/5
 
+        [HttpGet]
         public IHttpActionResult GetUsuario(int id)
         {
             Usuario usuario = db.Usuario.Find(id);
@@ -42,7 +49,8 @@ namespace GlassCoreAPI.Controllers
 
         // PUT: api/Usuarios/5
 
-        public Usuario PutModificarUsuario(int Id_Usuario, string Nombre_Usuario = null, string Apellido_Usuario = null, string Email = null, string Imagen = null, string Estado = null, long? UserName = null, string Password = null, string Rol = null)
+        [HttpPut]
+        public Usuario PutModificarUsuario(int Id_Usuario, string Nombre_Usuario = null, string Apellido_Usuario = null, string Email = null, string Imagen = null, string Estado = null, string UserName = null, string Password = null, string Rol = null)
         {
             // Llama al stored procedure ppModificarUsuario con los parámetros opcionales
             db.ppModificarUsuario(Id_Usuario, Nombre_Usuario, Apellido_Usuario, Email, Imagen, Estado, UserName, Password, Rol);
@@ -54,17 +62,20 @@ namespace GlassCoreAPI.Controllers
 
 
 
+
+
+
         [HttpPost]
-        [Route("api/Usuarios/postUsuario")]
-        public IHttpActionResult PostUsuario(string Rol, long UserName, string Password, string Email, string Estado, string Nombre_Usuario, string Apellido_Usuario, string Imagen =null)
+        public IHttpActionResult PostUsuario([FromBody]  CreateUserDTO user)
         {
-            
+            string passwordHashed = BCrypt.Net.BCrypt.EnhancedHashPassword(user.Password,13); // Se hashea la password
 
             try
             {
-                db.ppInsertarUsuario(Rol, Nombre_Usuario, Apellido_Usuario, Imagen, UserName, Password, Email, Estado);
+                
+                db.ppInsertarUsuario(user.Rol, user.Nombre, user.Apellido, user.Imagen, user.UserName, passwordHashed, user.Email, user.Estado);
 
-                return Ok("Usuario insertado correctamente");
+                return Ok("Usuario insertado correctamente"); // Devuelve un HTTP 200 OK si se ingreso
 
 
             }

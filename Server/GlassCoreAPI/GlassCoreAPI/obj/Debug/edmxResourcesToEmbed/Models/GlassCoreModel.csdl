@@ -6,9 +6,9 @@
     </Key>
     <Property Name="Id_Administrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK__Administr__Id_Us__59904A2C" FromRole="Administrador" ToRole="Usuario" />
-    <NavigationProperty Name="Estudiante_Soporte" Relationship="Self.FK__Estudiant__Id_Ad__7AF13DF7" FromRole="Administrador" ToRole="Estudiante_Soporte" />
-    <NavigationProperty Name="Profesor_Soporte" Relationship="Self.FK__Profesor___Id_Ad__7EC1CEDB" FromRole="Administrador" ToRole="Profesor_Soporte" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Administr__Id_Us__46E78A0C" FromRole="Administrador" ToRole="Usuario" />
+    <NavigationProperty Name="Estudiante_Soporte" Relationship="Self.FK__Estudiant__Id_Ad__68487DD7" FromRole="Administrador" ToRole="Estudiante_Soporte" />
+    <NavigationProperty Name="Profesor_Soporte" Relationship="Self.FK__Profesor___Id_Ad__6C190EBB" FromRole="Administrador" ToRole="Profesor_Soporte" />
   </EntityType>
   <EntityType Name="Asignatura">
     <Key>
@@ -20,17 +20,17 @@
     <Property Name="Id_Codigo_Asignatura" Type="Int32" Nullable="false" />
     <Property Name="Creditos" Type="Int32" Nullable="false" />
     <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Codigo_Asignatura" Relationship="Self.FK__Asignatur__Id_Co__69C6B1F5" FromRole="Asignatura" ToRole="Codigo_Asignatura" />
-    <NavigationProperty Name="Pensum" Relationship="Self.FK__Pensum__Id_Asign__725BF7F6" FromRole="Asignatura" ToRole="Pensum" />
-    <NavigationProperty Name="Seccion" Relationship="Self.FK__Seccion__Id_Asig__6CA31EA0" FromRole="Asignatura" ToRole="Seccion" />
+    <NavigationProperty Name="Codigo_Asignatura" Relationship="Self.FK__Asignatur__Id_Co__571DF1D5" FromRole="Asignatura" ToRole="Codigo_Asignatura" />
+    <NavigationProperty Name="Pensum" Relationship="Self.FK__Pensum__Id_Asign__5FB337D6" FromRole="Asignatura" ToRole="Pensum" />
+    <NavigationProperty Name="Seccion" Relationship="Self.FK__Seccion__Id_Asig__59FA5E80" FromRole="Asignatura" ToRole="Seccion" />
   </EntityType>
   <EntityType Name="Aula">
     <Key>
       <PropertyRef Name="Id_Aula" />
     </Key>
     <Property Name="Id_Aula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre_Aula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Horario" Relationship="Self.FK__Horario__Id_Aula__762C88DA" FromRole="Aula" ToRole="Horario" />
+    <Property Name="Nombre_Aula" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Horario" Relationship="Self.FK__Horario__Id_Aula__6383C8BA" FromRole="Aula" ToRole="Horario" />
   </EntityType>
   <EntityType Name="Carrera">
     <Key>
@@ -39,7 +39,7 @@
     <Property Name="Id_Carrera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nombre_Carrera" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Permanencia" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Pensum" Relationship="Self.FK__Pensum__Id_Carre__73501C2F" FromRole="Carrera" ToRole="Pensum" />
+    <NavigationProperty Name="Pensum" Relationship="Self.FK__Pensum__Id_Carre__60A75C0F" FromRole="Carrera" ToRole="Pensum" />
   </EntityType>
   <EntityType Name="Ciclo">
     <Key>
@@ -47,7 +47,7 @@
     </Key>
     <Property Name="Id_Ciclo" Type="Int32" Nullable="false" />
     <Property Name="Desc_Ciclo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Seccion" Relationship="Self.FK__Seccion__Id_Cicl__6F7F8B4B" FromRole="Ciclo" ToRole="Seccion" />
+    <NavigationProperty Name="Seccion" Relationship="Self.FK__Seccion__Id_Cicl__5CD6CB2B" FromRole="Ciclo" ToRole="Seccion" />
   </EntityType>
   <EntityType Name="Codigo_Asignatura">
     <Key>
@@ -55,7 +55,7 @@
     </Key>
     <Property Name="Id_Codigo_Asignatura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Codigo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Asignatura" Relationship="Self.FK__Asignatur__Id_Co__69C6B1F5" FromRole="Codigo_Asignatura" ToRole="Asignatura" />
+    <NavigationProperty Name="Asignatura" Relationship="Self.FK__Asignatur__Id_Co__571DF1D5" FromRole="Codigo_Asignatura" ToRole="Asignatura" />
   </EntityType>
   <EntityType Name="Dia">
     <Key>
@@ -63,7 +63,7 @@
     </Key>
     <Property Name="Id_Dia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nombre_Dia" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Seccion" Relationship="Self.FK__Seccion__Id_Dia__6D9742D9" FromRole="Dia" ToRole="Seccion" />
+    <NavigationProperty Name="Seccion" Relationship="Self.FK__Seccion__Id_Dia__5AEE82B9" FromRole="Dia" ToRole="Seccion" />
   </EntityType>
   <EntityType Name="Estudiante">
     <Key>
@@ -77,10 +77,10 @@
     <Property Name="Id_Carrera" Type="Int32" Nullable="false" />
     <Property Name="Epoints" Type="Int32" />
     <Property Name="Trimestre" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Estudiante_Soporte" Relationship="Self.FK__Estudiant__Id_Es__79FD19BE" FromRole="Estudiante" ToRole="Estudiante_Soporte" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK__Estudiant__Id_Us__65F62111" FromRole="Estudiante" ToRole="Usuario" />
-    <NavigationProperty Name="Horario" Relationship="Self.FK__Horario__Id_Estu__7720AD13" FromRole="Estudiante" ToRole="Horario" />
-    <NavigationProperty Name="Tarea" Relationship="Self.FK__Tarea__Id_Estudi__019E3B86" FromRole="Estudiante" ToRole="Tarea" />
+    <NavigationProperty Name="Estudiante_Soporte" Relationship="Self.FK__Estudiant__Id_Es__6754599E" FromRole="Estudiante" ToRole="Estudiante_Soporte" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Estudiant__Id_Us__534D60F1" FromRole="Estudiante" ToRole="Usuario" />
+    <NavigationProperty Name="Horario" Relationship="Self.FK__Horario__Id_Estu__6477ECF3" FromRole="Estudiante" ToRole="Horario" />
+    <NavigationProperty Name="Tarea" Relationship="Self.FK__Tarea__Id_Estudi__6EF57B66" FromRole="Estudiante" ToRole="Tarea" />
   </EntityType>
   <EntityType Name="Estudiante_Soporte">
     <Key>
@@ -95,8 +95,8 @@
     <Property Name="Id_Nota" Type="Int32" Nullable="false" />
     <Property Name="Fecha_Enviada" Type="DateTime" Precision="3" />
     <Property Name="Fecha_Respondida" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Administrador" Relationship="Self.FK__Estudiant__Id_Ad__7AF13DF7" FromRole="Estudiante_Soporte" ToRole="Administrador" />
-    <NavigationProperty Name="Estudiante" Relationship="Self.FK__Estudiant__Id_Es__79FD19BE" FromRole="Estudiante_Soporte" ToRole="Estudiante" />
+    <NavigationProperty Name="Administrador" Relationship="Self.FK__Estudiant__Id_Ad__68487DD7" FromRole="Estudiante_Soporte" ToRole="Administrador" />
+    <NavigationProperty Name="Estudiante" Relationship="Self.FK__Estudiant__Id_Es__6754599E" FromRole="Estudiante_Soporte" ToRole="Estudiante" />
   </EntityType>
   <EntityType Name="Horario">
     <Key>
@@ -110,8 +110,8 @@
     <Property Name="Calificacion_MD" Type="Int32" />
     <Property Name="Calificacion_Final" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
     <Property Name="Id_Aula" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Aula" Relationship="Self.FK__Horario__Id_Aula__762C88DA" FromRole="Horario" ToRole="Aula" />
-    <NavigationProperty Name="Estudiante" Relationship="Self.FK__Horario__Id_Estu__7720AD13" FromRole="Horario" ToRole="Estudiante" />
+    <NavigationProperty Name="Aula" Relationship="Self.FK__Horario__Id_Aula__6383C8BA" FromRole="Horario" ToRole="Aula" />
+    <NavigationProperty Name="Estudiante" Relationship="Self.FK__Horario__Id_Estu__6477ECF3" FromRole="Horario" ToRole="Estudiante" />
   </EntityType>
   <EntityType Name="Pensum">
     <Key>
@@ -121,8 +121,8 @@
     <Property Name="Id_Carrera" Type="Int32" Nullable="false" />
     <Property Name="Id_Asignatura" Type="Int32" Nullable="false" />
     <Property Name="Año" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Asignatura" Relationship="Self.FK__Pensum__Id_Asign__725BF7F6" FromRole="Pensum" ToRole="Asignatura" />
-    <NavigationProperty Name="Carrera" Relationship="Self.FK__Pensum__Id_Carre__73501C2F" FromRole="Pensum" ToRole="Carrera" />
+    <NavigationProperty Name="Asignatura" Relationship="Self.FK__Pensum__Id_Asign__5FB337D6" FromRole="Pensum" ToRole="Asignatura" />
+    <NavigationProperty Name="Carrera" Relationship="Self.FK__Pensum__Id_Carre__60A75C0F" FromRole="Pensum" ToRole="Carrera" />
   </EntityType>
   <EntityType Name="Profesor">
     <Key>
@@ -131,10 +131,10 @@
     <Property Name="Id_Profesor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
     <Property Name="Id_Titulo" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Profesor_Soporte" Relationship="Self.FK__Profesor___Id_Pr__7DCDAAA2" FromRole="Profesor" ToRole="Profesor_Soporte" />
-    <NavigationProperty Name="Titulo" Relationship="Self.FK__Profesor__Id_Tit__5E54FF49" FromRole="Profesor" ToRole="Titulo" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK__Profesor__Id_Usu__5D60DB10" FromRole="Profesor" ToRole="Usuario" />
-    <NavigationProperty Name="Seccion" Relationship="Self.FK__Seccion__Id_Prof__6E8B6712" FromRole="Profesor" ToRole="Seccion" />
+    <NavigationProperty Name="Profesor_Soporte" Relationship="Self.FK__Profesor___Id_Pr__6B24EA82" FromRole="Profesor" ToRole="Profesor_Soporte" />
+    <NavigationProperty Name="Titulo" Relationship="Self.FK__Profesor__Id_Tit__4BAC3F29" FromRole="Profesor" ToRole="Titulo" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Profesor__Id_Usu__4AB81AF0" FromRole="Profesor" ToRole="Usuario" />
+    <NavigationProperty Name="Seccion" Relationship="Self.FK__Seccion__Id_Prof__5BE2A6F2" FromRole="Profesor" ToRole="Seccion" />
   </EntityType>
   <EntityType Name="Profesor_Soporte">
     <Key>
@@ -149,8 +149,8 @@
     <Property Name="Id_Nota" Type="Int32" Nullable="false" />
     <Property Name="Fecha_Enviada" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Fecha_Respondida" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="Administrador" Relationship="Self.FK__Profesor___Id_Ad__7EC1CEDB" FromRole="Profesor_Soporte" ToRole="Administrador" />
-    <NavigationProperty Name="Profesor" Relationship="Self.FK__Profesor___Id_Pr__7DCDAAA2" FromRole="Profesor_Soporte" ToRole="Profesor" />
+    <NavigationProperty Name="Administrador" Relationship="Self.FK__Profesor___Id_Ad__6C190EBB" FromRole="Profesor_Soporte" ToRole="Administrador" />
+    <NavigationProperty Name="Profesor" Relationship="Self.FK__Profesor___Id_Pr__6B24EA82" FromRole="Profesor_Soporte" ToRole="Profesor" />
   </EntityType>
   <EntityType Name="Seccion">
     <Key>
@@ -166,10 +166,10 @@
     <Property Name="Hora_Inicio" Type="Time" Precision="7" />
     <Property Name="Hora_Salida" Type="Time" Precision="7" />
     <Property Name="Id_Dia" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Asignatura" Relationship="Self.FK__Seccion__Id_Asig__6CA31EA0" FromRole="Seccion" ToRole="Asignatura" />
-    <NavigationProperty Name="Ciclo" Relationship="Self.FK__Seccion__Id_Cicl__6F7F8B4B" FromRole="Seccion" ToRole="Ciclo" />
-    <NavigationProperty Name="Dia" Relationship="Self.FK__Seccion__Id_Dia__6D9742D9" FromRole="Seccion" ToRole="Dia" />
-    <NavigationProperty Name="Profesor" Relationship="Self.FK__Seccion__Id_Prof__6E8B6712" FromRole="Seccion" ToRole="Profesor" />
+    <NavigationProperty Name="Asignatura" Relationship="Self.FK__Seccion__Id_Asig__59FA5E80" FromRole="Seccion" ToRole="Asignatura" />
+    <NavigationProperty Name="Ciclo" Relationship="Self.FK__Seccion__Id_Cicl__5CD6CB2B" FromRole="Seccion" ToRole="Ciclo" />
+    <NavigationProperty Name="Dia" Relationship="Self.FK__Seccion__Id_Dia__5AEE82B9" FromRole="Seccion" ToRole="Dia" />
+    <NavigationProperty Name="Profesor" Relationship="Self.FK__Seccion__Id_Prof__5BE2A6F2" FromRole="Seccion" ToRole="Profesor" />
   </EntityType>
   <EntityType Name="Tarea">
     <Key>
@@ -182,7 +182,7 @@
     <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Fecha_Inicio" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Fecha_Cierre" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="Estudiante" Relationship="Self.FK__Tarea__Id_Estudi__019E3B86" FromRole="Tarea" ToRole="Estudiante" />
+    <NavigationProperty Name="Estudiante" Relationship="Self.FK__Tarea__Id_Estudi__6EF57B66" FromRole="Tarea" ToRole="Estudiante" />
   </EntityType>
   <EntityType Name="Titulo">
     <Key>
@@ -190,7 +190,7 @@
     </Key>
     <Property Name="Id_Titulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nombre_Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Profesor" Relationship="Self.FK__Profesor__Id_Tit__5E54FF49" FromRole="Titulo" ToRole="Profesor" />
+    <NavigationProperty Name="Profesor" Relationship="Self.FK__Profesor__Id_Tit__4BAC3F29" FromRole="Titulo" ToRole="Profesor" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
@@ -202,15 +202,15 @@
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Rol" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="UserName" Type="Int64" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Imagen" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Fecha_Ingreso" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="Administrador" Relationship="Self.FK__Administr__Id_Us__59904A2C" FromRole="Usuario" ToRole="Administrador" />
-    <NavigationProperty Name="Estudiante" Relationship="Self.FK__Estudiant__Id_Us__65F62111" FromRole="Usuario" ToRole="Estudiante" />
-    <NavigationProperty Name="Profesor" Relationship="Self.FK__Profesor__Id_Usu__5D60DB10" FromRole="Usuario" ToRole="Profesor" />
+    <NavigationProperty Name="Administrador" Relationship="Self.FK__Administr__Id_Us__46E78A0C" FromRole="Usuario" ToRole="Administrador" />
+    <NavigationProperty Name="Estudiante" Relationship="Self.FK__Estudiant__Id_Us__534D60F1" FromRole="Usuario" ToRole="Estudiante" />
+    <NavigationProperty Name="Profesor" Relationship="Self.FK__Profesor__Id_Usu__4AB81AF0" FromRole="Usuario" ToRole="Profesor" />
   </EntityType>
-  <Association Name="FK__Administr__Id_Us__59904A2C">
+  <Association Name="FK__Administr__Id_Us__46E78A0C">
     <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
     <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
     <ReferentialConstraint>
@@ -222,7 +222,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Estudiant__Id_Ad__7AF13DF7">
+  <Association Name="FK__Estudiant__Id_Ad__68487DD7">
     <End Role="Administrador" Type="Self.Administrador" Multiplicity="1" />
     <End Role="Estudiante_Soporte" Type="Self.Estudiante_Soporte" Multiplicity="*" />
     <ReferentialConstraint>
@@ -234,7 +234,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Profesor___Id_Ad__7EC1CEDB">
+  <Association Name="FK__Profesor___Id_Ad__6C190EBB">
     <End Role="Administrador" Type="Self.Administrador" Multiplicity="1" />
     <End Role="Profesor_Soporte" Type="Self.Profesor_Soporte" Multiplicity="*" />
     <ReferentialConstraint>
@@ -246,7 +246,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Asignatur__Id_Co__69C6B1F5">
+  <Association Name="FK__Asignatur__Id_Co__571DF1D5">
     <End Role="Codigo_Asignatura" Type="Self.Codigo_Asignatura" Multiplicity="1" />
     <End Role="Asignatura" Type="Self.Asignatura" Multiplicity="*" />
     <ReferentialConstraint>
@@ -258,7 +258,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Pensum__Id_Asign__725BF7F6">
+  <Association Name="FK__Pensum__Id_Asign__5FB337D6">
     <End Role="Asignatura" Type="Self.Asignatura" Multiplicity="1" />
     <End Role="Pensum" Type="Self.Pensum" Multiplicity="*" />
     <ReferentialConstraint>
@@ -270,7 +270,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Seccion__Id_Asig__6CA31EA0">
+  <Association Name="FK__Seccion__Id_Asig__59FA5E80">
     <End Role="Asignatura" Type="Self.Asignatura" Multiplicity="1" />
     <End Role="Seccion" Type="Self.Seccion" Multiplicity="*" />
     <ReferentialConstraint>
@@ -282,7 +282,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Horario__Id_Aula__762C88DA">
+  <Association Name="FK__Horario__Id_Aula__6383C8BA">
     <End Role="Aula" Type="Self.Aula" Multiplicity="1" />
     <End Role="Horario" Type="Self.Horario" Multiplicity="*" />
     <ReferentialConstraint>
@@ -294,7 +294,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Pensum__Id_Carre__73501C2F">
+  <Association Name="FK__Pensum__Id_Carre__60A75C0F">
     <End Role="Carrera" Type="Self.Carrera" Multiplicity="1" />
     <End Role="Pensum" Type="Self.Pensum" Multiplicity="*" />
     <ReferentialConstraint>
@@ -306,7 +306,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Seccion__Id_Cicl__6F7F8B4B">
+  <Association Name="FK__Seccion__Id_Cicl__5CD6CB2B">
     <End Role="Ciclo" Type="Self.Ciclo" Multiplicity="0..1" />
     <End Role="Seccion" Type="Self.Seccion" Multiplicity="*" />
     <ReferentialConstraint>
@@ -318,7 +318,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Seccion__Id_Dia__6D9742D9">
+  <Association Name="FK__Seccion__Id_Dia__5AEE82B9">
     <End Role="Dia" Type="Self.Dia" Multiplicity="1" />
     <End Role="Seccion" Type="Self.Seccion" Multiplicity="*" />
     <ReferentialConstraint>
@@ -330,7 +330,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Estudiant__Id_Es__79FD19BE">
+  <Association Name="FK__Estudiant__Id_Es__6754599E">
     <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
     <End Role="Estudiante_Soporte" Type="Self.Estudiante_Soporte" Multiplicity="*" />
     <ReferentialConstraint>
@@ -342,7 +342,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Estudiant__Id_Us__65F62111">
+  <Association Name="FK__Estudiant__Id_Us__534D60F1">
     <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
     <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
     <ReferentialConstraint>
@@ -354,7 +354,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Horario__Id_Estu__7720AD13">
+  <Association Name="FK__Horario__Id_Estu__6477ECF3">
     <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
     <End Role="Horario" Type="Self.Horario" Multiplicity="*" />
     <ReferentialConstraint>
@@ -366,7 +366,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tarea__Id_Estudi__019E3B86">
+  <Association Name="FK__Tarea__Id_Estudi__6EF57B66">
     <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
     <End Role="Tarea" Type="Self.Tarea" Multiplicity="*" />
     <ReferentialConstraint>
@@ -378,7 +378,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Profesor___Id_Pr__7DCDAAA2">
+  <Association Name="FK__Profesor___Id_Pr__6B24EA82">
     <End Role="Profesor" Type="Self.Profesor" Multiplicity="1" />
     <End Role="Profesor_Soporte" Type="Self.Profesor_Soporte" Multiplicity="*" />
     <ReferentialConstraint>
@@ -390,7 +390,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Profesor__Id_Tit__5E54FF49">
+  <Association Name="FK__Profesor__Id_Tit__4BAC3F29">
     <End Role="Titulo" Type="Self.Titulo" Multiplicity="1" />
     <End Role="Profesor" Type="Self.Profesor" Multiplicity="*" />
     <ReferentialConstraint>
@@ -402,7 +402,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Profesor__Id_Usu__5D60DB10">
+  <Association Name="FK__Profesor__Id_Usu__4AB81AF0">
     <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
     <End Role="Profesor" Type="Self.Profesor" Multiplicity="*" />
     <ReferentialConstraint>
@@ -414,7 +414,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Seccion__Id_Prof__6E8B6712">
+  <Association Name="FK__Seccion__Id_Prof__5BE2A6F2">
     <End Role="Profesor" Type="Self.Profesor" Multiplicity="0..1" />
     <End Role="Seccion" Type="Self.Seccion" Multiplicity="*" />
     <ReferentialConstraint>
@@ -444,75 +444,75 @@
     <EntitySet Name="Tarea" EntityType="Self.Tarea" />
     <EntitySet Name="Titulo" EntityType="Self.Titulo" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-    <AssociationSet Name="FK__Administr__Id_Us__59904A2C" Association="Self.FK__Administr__Id_Us__59904A2C">
+    <AssociationSet Name="FK__Administr__Id_Us__46E78A0C" Association="Self.FK__Administr__Id_Us__46E78A0C">
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="Administrador" EntitySet="Administrador" />
     </AssociationSet>
-    <AssociationSet Name="FK__Estudiant__Id_Ad__7AF13DF7" Association="Self.FK__Estudiant__Id_Ad__7AF13DF7">
+    <AssociationSet Name="FK__Estudiant__Id_Ad__68487DD7" Association="Self.FK__Estudiant__Id_Ad__68487DD7">
       <End Role="Administrador" EntitySet="Administrador" />
       <End Role="Estudiante_Soporte" EntitySet="Estudiante_Soporte" />
     </AssociationSet>
-    <AssociationSet Name="FK__Profesor___Id_Ad__7EC1CEDB" Association="Self.FK__Profesor___Id_Ad__7EC1CEDB">
+    <AssociationSet Name="FK__Profesor___Id_Ad__6C190EBB" Association="Self.FK__Profesor___Id_Ad__6C190EBB">
       <End Role="Administrador" EntitySet="Administrador" />
       <End Role="Profesor_Soporte" EntitySet="Profesor_Soporte" />
     </AssociationSet>
-    <AssociationSet Name="FK__Asignatur__Id_Co__69C6B1F5" Association="Self.FK__Asignatur__Id_Co__69C6B1F5">
+    <AssociationSet Name="FK__Asignatur__Id_Co__571DF1D5" Association="Self.FK__Asignatur__Id_Co__571DF1D5">
       <End Role="Codigo_Asignatura" EntitySet="Codigo_Asignatura" />
       <End Role="Asignatura" EntitySet="Asignatura" />
     </AssociationSet>
-    <AssociationSet Name="FK__Pensum__Id_Asign__725BF7F6" Association="Self.FK__Pensum__Id_Asign__725BF7F6">
+    <AssociationSet Name="FK__Pensum__Id_Asign__5FB337D6" Association="Self.FK__Pensum__Id_Asign__5FB337D6">
       <End Role="Asignatura" EntitySet="Asignatura" />
       <End Role="Pensum" EntitySet="Pensum" />
     </AssociationSet>
-    <AssociationSet Name="FK__Seccion__Id_Asig__6CA31EA0" Association="Self.FK__Seccion__Id_Asig__6CA31EA0">
+    <AssociationSet Name="FK__Seccion__Id_Asig__59FA5E80" Association="Self.FK__Seccion__Id_Asig__59FA5E80">
       <End Role="Asignatura" EntitySet="Asignatura" />
       <End Role="Seccion" EntitySet="Seccion" />
     </AssociationSet>
-    <AssociationSet Name="FK__Horario__Id_Aula__762C88DA" Association="Self.FK__Horario__Id_Aula__762C88DA">
+    <AssociationSet Name="FK__Horario__Id_Aula__6383C8BA" Association="Self.FK__Horario__Id_Aula__6383C8BA">
       <End Role="Aula" EntitySet="Aula" />
       <End Role="Horario" EntitySet="Horario" />
     </AssociationSet>
-    <AssociationSet Name="FK__Pensum__Id_Carre__73501C2F" Association="Self.FK__Pensum__Id_Carre__73501C2F">
+    <AssociationSet Name="FK__Pensum__Id_Carre__60A75C0F" Association="Self.FK__Pensum__Id_Carre__60A75C0F">
       <End Role="Carrera" EntitySet="Carrera" />
       <End Role="Pensum" EntitySet="Pensum" />
     </AssociationSet>
-    <AssociationSet Name="FK__Seccion__Id_Cicl__6F7F8B4B" Association="Self.FK__Seccion__Id_Cicl__6F7F8B4B">
+    <AssociationSet Name="FK__Seccion__Id_Cicl__5CD6CB2B" Association="Self.FK__Seccion__Id_Cicl__5CD6CB2B">
       <End Role="Ciclo" EntitySet="Ciclo" />
       <End Role="Seccion" EntitySet="Seccion" />
     </AssociationSet>
-    <AssociationSet Name="FK__Seccion__Id_Dia__6D9742D9" Association="Self.FK__Seccion__Id_Dia__6D9742D9">
+    <AssociationSet Name="FK__Seccion__Id_Dia__5AEE82B9" Association="Self.FK__Seccion__Id_Dia__5AEE82B9">
       <End Role="Dia" EntitySet="Dia" />
       <End Role="Seccion" EntitySet="Seccion" />
     </AssociationSet>
-    <AssociationSet Name="FK__Estudiant__Id_Es__79FD19BE" Association="Self.FK__Estudiant__Id_Es__79FD19BE">
+    <AssociationSet Name="FK__Estudiant__Id_Es__6754599E" Association="Self.FK__Estudiant__Id_Es__6754599E">
       <End Role="Estudiante" EntitySet="Estudiante" />
       <End Role="Estudiante_Soporte" EntitySet="Estudiante_Soporte" />
     </AssociationSet>
-    <AssociationSet Name="FK__Estudiant__Id_Us__65F62111" Association="Self.FK__Estudiant__Id_Us__65F62111">
+    <AssociationSet Name="FK__Estudiant__Id_Us__534D60F1" Association="Self.FK__Estudiant__Id_Us__534D60F1">
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="Estudiante" EntitySet="Estudiante" />
     </AssociationSet>
-    <AssociationSet Name="FK__Horario__Id_Estu__7720AD13" Association="Self.FK__Horario__Id_Estu__7720AD13">
+    <AssociationSet Name="FK__Horario__Id_Estu__6477ECF3" Association="Self.FK__Horario__Id_Estu__6477ECF3">
       <End Role="Estudiante" EntitySet="Estudiante" />
       <End Role="Horario" EntitySet="Horario" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tarea__Id_Estudi__019E3B86" Association="Self.FK__Tarea__Id_Estudi__019E3B86">
+    <AssociationSet Name="FK__Tarea__Id_Estudi__6EF57B66" Association="Self.FK__Tarea__Id_Estudi__6EF57B66">
       <End Role="Estudiante" EntitySet="Estudiante" />
       <End Role="Tarea" EntitySet="Tarea" />
     </AssociationSet>
-    <AssociationSet Name="FK__Profesor___Id_Pr__7DCDAAA2" Association="Self.FK__Profesor___Id_Pr__7DCDAAA2">
+    <AssociationSet Name="FK__Profesor___Id_Pr__6B24EA82" Association="Self.FK__Profesor___Id_Pr__6B24EA82">
       <End Role="Profesor" EntitySet="Profesor" />
       <End Role="Profesor_Soporte" EntitySet="Profesor_Soporte" />
     </AssociationSet>
-    <AssociationSet Name="FK__Profesor__Id_Tit__5E54FF49" Association="Self.FK__Profesor__Id_Tit__5E54FF49">
+    <AssociationSet Name="FK__Profesor__Id_Tit__4BAC3F29" Association="Self.FK__Profesor__Id_Tit__4BAC3F29">
       <End Role="Titulo" EntitySet="Titulo" />
       <End Role="Profesor" EntitySet="Profesor" />
     </AssociationSet>
-    <AssociationSet Name="FK__Profesor__Id_Usu__5D60DB10" Association="Self.FK__Profesor__Id_Usu__5D60DB10">
+    <AssociationSet Name="FK__Profesor__Id_Usu__4AB81AF0" Association="Self.FK__Profesor__Id_Usu__4AB81AF0">
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="Profesor" EntitySet="Profesor" />
     </AssociationSet>
-    <AssociationSet Name="FK__Seccion__Id_Prof__6E8B6712" Association="Self.FK__Seccion__Id_Prof__6E8B6712">
+    <AssociationSet Name="FK__Seccion__Id_Prof__5BE2A6F2" Association="Self.FK__Seccion__Id_Prof__5BE2A6F2">
       <End Role="Profesor" EntitySet="Profesor" />
       <End Role="Seccion" EntitySet="Seccion" />
     </AssociationSet>
@@ -526,15 +526,10 @@
       <Parameter Name="Nombre_Usuario" Mode="In" Type="String" />
       <Parameter Name="Apellido_Usuario" Mode="In" Type="String" />
       <Parameter Name="Imagen" Mode="In" Type="String" />
-      <Parameter Name="UserName" Mode="In" Type="Int64" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
       <Parameter Name="Password" Mode="In" Type="String" />
       <Parameter Name="Email" Mode="In" Type="String" />
       <Parameter Name="Estado" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="ppLogin">
-      <Parameter Name="UserName" Mode="In" Type="Int64" />
-      <Parameter Name="Password" Mode="In" Type="String" />
-      <Parameter Name="TipoUsuario" Mode="InOut" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="ppModificarUsuario">
       <Parameter Name="Id_Usuario" Mode="In" Type="Int32" />
@@ -543,18 +538,17 @@
       <Parameter Name="Email" Mode="In" Type="String" />
       <Parameter Name="Imagen" Mode="In" Type="String" />
       <Parameter Name="Estado" Mode="In" Type="String" />
-      <Parameter Name="UserName" Mode="In" Type="Int64" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
       <Parameter Name="Password" Mode="In" Type="String" />
       <Parameter Name="Rol" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="ppFiltrarUsuarios_Result">
-    <Property Type="Int32" Name="Id_Usuario" Nullable="false" />
     <Property Type="String" Name="Nombre_Usuario" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="Apellido_Usuario" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="Imagen" Nullable="false" MaxLength="400" />
     <Property Type="String" Name="Rol" Nullable="false" MaxLength="25" />
-    <Property Type="Int64" Name="UserName" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="Estado" Nullable="false" MaxLength="20" />
   </ComplexType>
